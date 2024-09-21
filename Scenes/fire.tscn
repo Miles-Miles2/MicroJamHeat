@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://dsskprjhpen2j"]
+
+[ext_resource type="Texture2D" uid="uid://dgnr0li65jftm" path="res://Assets/Sprites/ARW 2D Flame Sprite Sheet .png" id="1_a47c5"]
+[ext_resource type="AudioStream" uid="uid://7io1bksltk3o" path="res://Assets/Audio/SFX/quiet_fire-sound-222359.mp3" id="2_4v6h2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xm4a"]
+atlas = ExtResource("1_a47c5")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax5ip"]
+atlas = ExtResource("1_a47c5")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovwgw"]
+atlas = ExtResource("1_a47c5")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj80a"]
+atlas = ExtResource("1_a47c5")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ckdd"]
+atlas = ExtResource("1_a47c5")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cbg1"]
+atlas = ExtResource("1_a47c5")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioolw"]
+atlas = ExtResource("1_a47c5")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dptkv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xm4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax5ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovwgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj80a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ckdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cbg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioolw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_dptkv")
+frame_progress = 0.919442
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("2_4v6h2")
+stream_paused = true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgdfyels18y2i"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_42ncx"]
+[ext_resource type="Texture2D" uid="uid://bvm74qpopswhd" path="res://Assets/Sprites/interior tileset.png" id="2_1prb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_popiv"]
+size = Vector2(14, 24)
+
+[node name="pepper" type="CharacterBody2D"]
+script = ExtResource("1_42ncx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_1prb1")
+region_enabled = true
+region_rect = Rect2(241, 473, 14, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_popiv")
