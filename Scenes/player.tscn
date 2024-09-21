@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://5hlku3ibivuq"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_6i3wp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axj1k"]
+radius = 30.0167
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_obxs8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ssrse"]
+radius = 4.12311
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dfqy0"]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_6i3wp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_axj1k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(51.1464, 54.7756)
+texture = SubResource("PlaceholderTexture2D_obxs8")
+
+[node name="mouseDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouseDetector"]
+shape = SubResource("CircleShape2D_ssrse")
+
+[node name="Sprite2D2" type="Sprite2D" parent="mouseDetector"]
+scale = Vector2(13.88, 13.88)
+texture = SubResource("PlaceholderTexture2D_dfqy0")

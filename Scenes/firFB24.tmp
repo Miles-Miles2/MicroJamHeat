@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5arx4gooo333"]
+
+[ext_resource type="PackedScene" uid="uid://c7rixn1i8dexv" path="res://Scenes/fire_extinguisher.tscn" id="2_7rtgw"]
+[ext_resource type="PackedScene" uid="uid://bo8ibjf5qe14y" path="res://Scenes/pepper.tscn" id="2_mqvpl"]
+
+[node name="fireextinguisher test scene" type="Node2D"]
+
+[node name="fireExtinguisher" parent="." instance=ExtResource("2_7rtgw")]
+position = Vector2(105, 61)
+
+[node name="pepper" parent="." instance=ExtResource("2_mqvpl")]

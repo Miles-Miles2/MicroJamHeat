@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgdfyels18y2i"]
+[gd_scene load_steps=6 format=3 uid="uid://bo8ibjf5qe14y"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_42ncx"]
 [ext_resource type="Texture2D" uid="uid://bvm74qpopswhd" path="res://Assets/Sprites/interior tileset.png" id="2_1prb1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_popiv"]
 size = Vector2(14, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2b0qh"]
+radius = 4.12311
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hqrg5"]
 
 [node name="pepper" type="CharacterBody2D"]
 script = ExtResource("1_42ncx")
@@ -17,3 +22,12 @@ region_rect = Rect2(241, 473, 14, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_popiv")
+
+[node name="mouseDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouseDetector"]
+shape = SubResource("CircleShape2D_2b0qh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="mouseDetector"]
+scale = Vector2(13.88, 13.88)
+texture = SubResource("PlaceholderTexture2D_hqrg5")

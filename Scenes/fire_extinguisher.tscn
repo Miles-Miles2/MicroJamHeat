@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7rixn1i8dexv"]
+
+[ext_resource type="Script" path="res://Scripts/fire_extinguisher.gd" id="1_bfw86"]
+[ext_resource type="Texture2D" uid="uid://c0f3at34a0jun" path="res://Assets/Sprites/fireextinguisher.png" id="1_uen6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joduh"]
+size = Vector2(14, 18)
+
+[sub_resource type="Curve" id="Curve_tqhwe"]
+_data = [Vector2(0, 0.461538), 0.0, 7.04029, 0, 0, Vector2(0.16129, 1), 0.0, 0.0, 0, 0, Vector2(0.419355, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.69858, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_n3hdb"]
+offsets = PackedFloat32Array(0.666667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="fireExtinguisher" type="Area2D" groups=["holdable"]]
+script = ExtResource("1_bfw86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_joduh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(-1, 1)
+texture = ExtResource("1_uen6i")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(1, -5)
+amount = 512
+lifetime = 0.9
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 270.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+damping_min = 50.0
+damping_max = 60.0
+scale_amount_min = 3.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_tqhwe")
+color_ramp = SubResource("Gradient_n3hdb")
+
+[node name="extinguishArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extinguishArea"]
+polygon = PackedVector2Array(4, -5, 194, -44, 195, 35)
