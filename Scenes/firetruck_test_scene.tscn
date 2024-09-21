@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsb5ol0fw8ngc"]
+
+[ext_resource type="Script" path="res://firetruckDriveScript.gd" id="1_y3cb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2spne"]
+size = Vector2(20, 40)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sof4s"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5d2uv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c6xt3"]
+
+[node name="FiretruckTestScene" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." node_paths=PackedStringArray("FL", "FR", "BL", "BR", "debugLineFL", "debugLineFR")]
+position = Vector2(756, 520)
+rotation = -0.805356
+script = ExtResource("1_y3cb8")
+FL = NodePath("wheelFL")
+FR = NodePath("wheelFR")
+BL = NodePath("wheelBL")
+BR = NodePath("wheelBR")
+debugLineFL = NodePath("../FL_line")
+debugLineFR = NodePath("../FR_line")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_2spne")
+
+[node name="wheelFL" type="Node2D" parent="RigidBody2D"]
+position = Vector2(-10, -6)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/wheelFL"]
+scale = Vector2(1, 7.065)
+texture = SubResource("PlaceholderTexture2D_sof4s")
+
+[node name="wheelFR" type="Node2D" parent="RigidBody2D"]
+position = Vector2(10, -6)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/wheelFR"]
+scale = Vector2(1, 6.695)
+texture = SubResource("PlaceholderTexture2D_5d2uv")
+
+[node name="wheelBL" type="Node2D" parent="RigidBody2D"]
+position = Vector2(-10, 28)
+
+[node name="wheelBR" type="Node2D" parent="RigidBody2D"]
+position = Vector2(10, 28)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, 12)
+scale = Vector2(18.9722, 40.4751)
+texture = SubResource("PlaceholderTexture2D_c6xt3")
+
+[node name="FL_line" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 1.0
+
+[node name="FR_line" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0
