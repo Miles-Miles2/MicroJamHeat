@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5arx4gooo333"]
+[gd_scene load_steps=5 format=3 uid="uid://c5arx4gooo333"]
 
 [ext_resource type="PackedScene" uid="uid://c7rixn1i8dexv" path="res://Scenes/fire_extinguisher.tscn" id="2_7rtgw"]
 [ext_resource type="PackedScene" uid="uid://bo8ibjf5qe14y" path="res://Scenes/pepper.tscn" id="2_mqvpl"]
 [ext_resource type="PackedScene" uid="uid://caqw66g4dnwt2" path="res://Scenes/fire.tscn" id="3_dshp7"]
+[ext_resource type="PackedScene" uid="uid://dw4rvf4p8404u" path="res://Scenes/truck.tscn" id="4_kx5ty"]
 
 [node name="fireextinguisher test scene" type="Node2D"]
 
@@ -13,3 +14,6 @@ position = Vector2(105, 61)
 
 [node name="Node2D" parent="." instance=ExtResource("3_dshp7")]
 position = Vector2(283, 229)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_kx5ty")]
+position = Vector2(81, 266)

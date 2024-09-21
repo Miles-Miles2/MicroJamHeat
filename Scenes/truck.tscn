@@ -12,8 +12,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkynw"]
 size = Vector2(20, 40)
 
-[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("FL", "FR", "BL", "BR")]
+[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("FL", "FR", "BL", "BR") groups=["vehicle"]]
 position = Vector2(756, 520)
+collision_mask = 2
 angular_damp = 0.2
 script = ExtResource("1_fdjnd")
 MAX_SPEED = 200.0

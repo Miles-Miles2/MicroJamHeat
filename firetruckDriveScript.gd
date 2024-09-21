@@ -24,7 +24,8 @@ var angle: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	apply_force(Vector2(0,-10000), Vector2(0,0))
+	pass
+	#apply_force(Vector2(0,-10000), Vector2(0,0))
 	#apply_force()
 
 func _physics_process(delta: float) -> void:

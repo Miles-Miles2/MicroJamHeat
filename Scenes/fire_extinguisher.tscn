@@ -7,8 +7,8 @@
 size = Vector2(14, 18)
 
 [sub_resource type="Curve" id="Curve_tqhwe"]
-_data = [Vector2(0, 0.461538), 0.0, 7.04029, 0, 0, Vector2(0.16129, 1), 0.0, 0.0, 0, 0, Vector2(0.419355, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.69858, 0.0, 0, 0]
-point_count = 4
+_data = [Vector2(0, 0.461538), 0.0, 0.28825, 0, 0, Vector2(1, 1), 0.652931, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_n3hdb"]
 offsets = PackedFloat32Array(0.666667, 1)
@@ -28,6 +28,7 @@ texture = ExtResource("1_uen6i")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(1, -5)
+emitting = false
 amount = 512
 lifetime = 0.9
 emission_shape = 1
