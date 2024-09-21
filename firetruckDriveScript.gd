@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var MAX_SPEED: float
+@export var driving: bool = false
 
 @export var FL: Node2D
 var FL_vel: Vector2
@@ -11,9 +12,9 @@ var BL_vel: Vector2
 @export var BR: Node2D
 var BR_vel: Vector2
 
-@export var debugLineFL: Line2D
-@export var debugLineFR: Line2D
-@export var traceLine: Line2D
+#@export var debugLineFL: Line2D
+#@export var debugLineFR: Line2D
+#@export var traceLine: Line2D
 
 @export var throttle: float
 @export var steer: float
@@ -27,41 +28,29 @@ func _ready() -> void:
 	#apply_force()
 
 func _physics_process(delta: float) -> void:
-	steer += -(Input.get_axis("drive_right", "drive_left") * 0.1)
-	steer = clamp(steer, -1, 1)
-	steer *= 0.9
-	
-	throttle = Input.get_axis("drive_backward", "drive_forward")
-	#throttle = clamp(throttle, -1, 1)
-	#throttle 
-	
+	if driving:
+		steer += -(Input.get_axis("drive_right", "drive_left") * 0.1)
+		steer = clamp(steer, -1, 1)
+		steer *= 0.9
+		
+		throttle = Input.get_axis("drive_backward", "drive_forward")
+	else:
+		throttle = 0
+		steer = 0
+		#throttle = clamp(throttle, -1, 1)
+		#throttle 
+		
 	FL.rotation = (steer * deg_to_rad(45))
 	FR.rotation = (steer * deg_to_rad(45))
-	#apply_torque(steer * 10000)
-	#apply_force(Vector2.RIGHT.rotated(rotation) * -Input.get_axis("drive_right", "drive_left") * 50, (Vector2.UP.rotated(rotation) * 10))
-	#debugLineFR.points = [global_position + (Vector2.UP.rotated(rotation) * 10), global_position + (Vector2.UP.rotated(rotation) * 10) + (Vector2.RIGHT.rotated(rotation) * -Input.get_axis("drive_right", "drive_left") * 10)] 
-	
-	#var horizontalComponent = Vector2.RIGHT.rotated(rotation).dot(linear_velocity)
-	#apply_impulse(Vector2.RIGHT.rotated(rotation) * -horizontalComponent * 0.9)
-	#traceLine.add_point(position)
-	#print(Vector2.RIGHT.rotated(rotation))
-	#apply_force(Vector2.UP.rotated(rotation) * 10)
-	
+		
 	applyTireSidewaysForce(FL)
 	applyTireSidewaysForce(FR)
 	applyTireSidewaysForce(BL)
 	applyTireSidewaysForce(BR)
-	
+		
 	applyForwardThrust(FL)
 	applyForwardThrust(FR)
 	
-	#velocity at FR wheel
-	#var r = FR.global_position - global_position
-	#var angular_vel_rad = (angular_velocity)
-	#var rot_vel = angular_vel_rad * Vector2(-r.y, r.x)	
-	#print(rot_vel)
-	#debugLineFL.points = [global_position, global_position + r]
-	#debugLineFL.points = [FR.global_position, FR.global_position + rot_vel + linear_velocity]
 
 func getVelocityAtWheel(wheel: Node2D):
 	var r = wheel.global_position - global_position
@@ -83,7 +72,8 @@ func applyForwardThrust(wheel: Node2D):
 		print(thrust)
 		apply_impulse(Vector2.UP.rotated(rotation + wheel.rotation) * throttle * thrust, wheel.global_position - global_position)
 	else:
-		apply_impulse(Vector2.UP.rotated(rotation + wheel.rotation) * -forwardVel * 0.01)
+		apply_impulse(Vector2.UP.rotated(rotation + wheel.rotation) * -forwardVel * 0.015)
+	
 	
 '''
 func getVelocityAtPoint(point: Vector2):

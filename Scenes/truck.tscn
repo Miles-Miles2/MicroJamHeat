@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw4rvf4p8404u"]
+
+[ext_resource type="Script" path="res://firetruckDriveScript.gd" id="1_fdjnd"]
+[ext_resource type="Curve" uid="uid://dqw2y7rixnn8a" path="res://powerCurve.tres" id="2_dsah4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n3pko"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qib3j"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4o3eq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkynw"]
+size = Vector2(20, 40)
+
+[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("FL", "FR", "BL", "BR")]
+position = Vector2(756, 520)
+angular_damp = 0.2
+script = ExtResource("1_fdjnd")
+MAX_SPEED = 200.0
+FL = NodePath("wheelFL2")
+FR = NodePath("wheelFR2")
+BL = NodePath("wheelBL2")
+BR = NodePath("wheelBR2")
+powerCurve = ExtResource("2_dsah4")
+
+[node name="wheelFL2" type="Node2D" parent="."]
+position = Vector2(-10, -17.7625)
+
+[node name="Sprite2D" type="Sprite2D" parent="wheelFL2"]
+scale = Vector2(1, 7.065)
+texture = SubResource("PlaceholderTexture2D_n3pko")
+
+[node name="wheelFR2" type="Node2D" parent="."]
+position = Vector2(10, -17.7625)
+
+[node name="Sprite2D" type="Sprite2D" parent="wheelFR2"]
+scale = Vector2(1, 6.695)
+texture = SubResource("PlaceholderTexture2D_qib3j")
+
+[node name="wheelBL2" type="Node2D" parent="."]
+position = Vector2(-10, 16.2375)
+
+[node name="wheelBR2" type="Node2D" parent="."]
+position = Vector2(10, 16.2375)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 0.237549)
+scale = Vector2(18.9722, 40.4751)
+texture = SubResource("PlaceholderTexture2D_4o3eq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tkynw")

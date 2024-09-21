@@ -1,60 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsb5ol0fw8ngc"]
-
-[ext_resource type="Script" path="res://firetruckDriveScript.gd" id="1_y3cb8"]
-[ext_resource type="Curve" uid="uid://dqw2y7rixnn8a" path="res://powerCurve.tres" id="2_y7vat"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sof4s"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5d2uv"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c6xt3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7aeci"]
-size = Vector2(20, 40)
+[gd_scene format=3 uid="uid://bsb5ol0fw8ngc"]
 
 [node name="FiretruckTestScene" type="Node2D"]
-
-[node name="RigidBody2D" type="RigidBody2D" parent="." node_paths=PackedStringArray("FL", "FR", "BL", "BR", "debugLineFL", "debugLineFR", "traceLine")]
-position = Vector2(756, 520)
-angular_damp = 0.2
-script = ExtResource("1_y3cb8")
-MAX_SPEED = 200.0
-FL = NodePath("wheelFL")
-FR = NodePath("wheelFR")
-BL = NodePath("wheelBL")
-BR = NodePath("wheelBR")
-debugLineFL = NodePath("../FL_line")
-debugLineFR = NodePath("../FR_line")
-traceLine = NodePath("../trace")
-powerCurve = ExtResource("2_y7vat")
-
-[node name="wheelFL" type="Node2D" parent="RigidBody2D"]
-position = Vector2(-10, -17.7625)
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/wheelFL"]
-scale = Vector2(1, 7.065)
-texture = SubResource("PlaceholderTexture2D_sof4s")
-
-[node name="wheelFR" type="Node2D" parent="RigidBody2D"]
-position = Vector2(10, -17.7625)
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/wheelFR"]
-scale = Vector2(1, 6.695)
-texture = SubResource("PlaceholderTexture2D_5d2uv")
-
-[node name="wheelBL" type="Node2D" parent="RigidBody2D"]
-position = Vector2(-10, 16.2375)
-
-[node name="wheelBR" type="Node2D" parent="RigidBody2D"]
-position = Vector2(10, 16.2375)
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(0, 0.237549)
-scale = Vector2(18.9722, 40.4751)
-texture = SubResource("PlaceholderTexture2D_c6xt3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("RectangleShape2D_7aeci")
 
 [node name="FL_line" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
