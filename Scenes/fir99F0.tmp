@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsb5ol0fw8ngc"]
+[gd_scene load_steps=6 format=3 uid="uid://bsb5ol0fw8ngc"]
 
 [ext_resource type="Script" path="res://firetruckDriveScript.gd" id="1_y3cb8"]
-[ext_resource type="Curve" uid="uid://dqw2y7rixnn8a" path="res://powerCurve.tres" id="2_y7vat"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sof4s"]
 
@@ -18,7 +17,6 @@ size = Vector2(20, 40)
 position = Vector2(756, 520)
 angular_damp = 0.2
 script = ExtResource("1_y3cb8")
-MAX_SPEED = 200.0
 FL = NodePath("wheelFL")
 FR = NodePath("wheelFR")
 BL = NodePath("wheelBL")
@@ -26,7 +24,6 @@ BR = NodePath("wheelBR")
 debugLineFL = NodePath("../FL_line")
 debugLineFR = NodePath("../FR_line")
 traceLine = NodePath("../trace")
-powerCurve = ExtResource("2_y7vat")
 
 [node name="wheelFL" type="Node2D" parent="RigidBody2D"]
 position = Vector2(-10, -17.7625)
@@ -65,7 +62,6 @@ points = PackedVector2Array(0, 0, 0, 0)
 width = 2.0
 
 [node name="trace" type="Line2D" parent="."]
-visible = false
 width = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="."]

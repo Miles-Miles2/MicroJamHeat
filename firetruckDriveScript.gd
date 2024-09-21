@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@export var MAX_SPEED: float
+
 @export var FL: Node2D
 var FL_vel: Vector2
 @export var FR: Node2D
@@ -11,15 +13,79 @@ var BR_vel: Vector2
 
 @export var debugLineFL: Line2D
 @export var debugLineFR: Line2D
+@export var traceLine: Line2D
 
 @export var throttle: float
 @export var steer: float
+@export var powerCurve: Curve
+
+var angle: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	apply_force(Vector2(0,-10000), Vector2(0,0))
+	#apply_force()
 
+func _physics_process(delta: float) -> void:
+	steer += -(Input.get_axis("drive_right", "drive_left") * 0.1)
+	steer = clamp(steer, -1, 1)
+	steer *= 0.9
+	
+	throttle = Input.get_axis("drive_backward", "drive_forward")
+	#throttle = clamp(throttle, -1, 1)
+	#throttle 
+	
+	FL.rotation = (steer * deg_to_rad(45))
+	FR.rotation = (steer * deg_to_rad(45))
+	#apply_torque(steer * 10000)
+	#apply_force(Vector2.RIGHT.rotated(rotation) * -Input.get_axis("drive_right", "drive_left") * 50, (Vector2.UP.rotated(rotation) * 10))
+	#debugLineFR.points = [global_position + (Vector2.UP.rotated(rotation) * 10), global_position + (Vector2.UP.rotated(rotation) * 10) + (Vector2.RIGHT.rotated(rotation) * -Input.get_axis("drive_right", "drive_left") * 10)] 
+	
+	#var horizontalComponent = Vector2.RIGHT.rotated(rotation).dot(linear_velocity)
+	#apply_impulse(Vector2.RIGHT.rotated(rotation) * -horizontalComponent * 0.9)
+	#traceLine.add_point(position)
+	#print(Vector2.RIGHT.rotated(rotation))
+	#apply_force(Vector2.UP.rotated(rotation) * 10)
+	
+	applyTireSidewaysForce(FL)
+	applyTireSidewaysForce(FR)
+	applyTireSidewaysForce(BL)
+	applyTireSidewaysForce(BR)
+	
+	applyForwardThrust(FL)
+	applyForwardThrust(FR)
+	
+	#velocity at FR wheel
+	#var r = FR.global_position - global_position
+	#var angular_vel_rad = (angular_velocity)
+	#var rot_vel = angular_vel_rad * Vector2(-r.y, r.x)	
+	#print(rot_vel)
+	#debugLineFL.points = [global_position, global_position + r]
+	#debugLineFL.points = [FR.global_position, FR.global_position + rot_vel + linear_velocity]
 
+func getVelocityAtWheel(wheel: Node2D):
+	var r = wheel.global_position - global_position
+	var rot_vel = angular_velocity * Vector2(-r.y, r.x)
+	
+	return linear_velocity + rot_vel
+
+func applyTireSidewaysForce(wheel: Node2D):
+	var wheelVel = getVelocityAtWheel(wheel)
+	var sidewaysComponent = Vector2.RIGHT.rotated(rotation + wheel.rotation).dot(wheelVel)
+	apply_impulse(Vector2.RIGHT.rotated(rotation + wheel.rotation) * -sidewaysComponent * 0.05, wheel.global_position - global_position)
+	
+func applyForwardThrust(wheel: Node2D):
+	var forwardVel = Vector2.UP.rotated(rotation).dot(linear_velocity)
+	var normalizedSpeed = forwardVel / MAX_SPEED
+	#print(normalizedSpeed)
+	if throttle != 0:
+		var thrust = powerCurve.sample(normalizedSpeed)
+		print(thrust)
+		apply_impulse(Vector2.UP.rotated(rotation + wheel.rotation) * throttle * thrust, wheel.global_position - global_position)
+	else:
+		apply_impulse(Vector2.UP.rotated(rotation + wheel.rotation) * -forwardVel * 0.01)
+	
+'''
 func getVelocityAtPoint(point: Vector2):
 	var rotVel = deg_to_rad(angular_velocity) * Vector2(-point.y, point.x)
 	return linear_velocity + rotVel
@@ -46,15 +112,17 @@ func applyBrake(wheelForce: Vector2, wheel: Node2D, brakePower: float):
 	
 func applySidewaysForce(wheel: Node2D):
 	var sidewaysMagnitde = getVelocityAtPoint(wheel.global_position).dot(Vector2.RIGHT.rotated(rotation + wheel.rotation))
-	#debugLineFL.points = [FL.global_position, FL.global_position + FL_vel]
-	debugLineFR.points = [FR.global_position, FR.global_position + Vector2.RIGHT.rotated(rotation + FR.rotation) * sidewaysMagnitde]	
+	debugLineFL.points = [BR.global_position, BR.global_position + (Vector2.RIGHT.rotated(rotation + BR.rotation) * -sidewaysMagnitde * 0.8)]
+	#debugLineFR.points = [FR.global_position, FR.global_position + Vector2.RIGHT.rotated(rotation + FR.rotation) * sidewaysMagnitde]	
+	debugLineFR.points = [BR.global_position, BR.global_position + getVelocityAtPoint(BR.global_position)]
+	traceLine.add_point(BR.global_position)
 	print(sidewaysMagnitde)
 	
-	apply_force(Vector2.RIGHT.rotated(rotation + wheel.rotation) * -sidewaysMagnitde * 0.9, wheel.global_position - position)
+	apply_force(Vector2.RIGHT.rotated(rotation + wheel.rotation) * -sidewaysMagnitde * 1.2, wheel.global_position - global_position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	apply_central_force(Vector2(0, -5))
+	#apply_central_force(Vector2(0, -5))
 	var throttleInput: float = 0
 	if (Input.is_action_pressed("drive_forward")):
 		throttleInput += 1
@@ -67,7 +135,7 @@ func _physics_process(delta: float) -> void:
 	
 	var steerTarget = Input.get_axis("drive_right", "drive_left")
 	#steer += steerTarget * delta * 2
-	steer += -steerTarget * delta * 3
+	steer += -steerTarget * delta * 5
 	steer = clamp(steer, -1, 1)
 	steer *= 0.9
 	
@@ -98,5 +166,7 @@ func _physics_process(delta: float) -> void:
 	#draw lines
 	#debugLineFL.points = [FL.global_position, FL.global_position + FL_vel]
 	#debugLineFR.points = [FR.global_position, FR.global_position + FR_vel]
+	
+	'''
 	
 	
