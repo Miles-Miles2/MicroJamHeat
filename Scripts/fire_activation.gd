@@ -16,12 +16,10 @@ func enable(fuego):
 	if fuego.is_in_group("fire"): 
 		fuego.set_visible(true)
 		fuego.set_process(true)
-		_ready()
-	
-	
+	_ready()
+
 func _on_timer_timeout() -> void:
 	var num = generate()
-	print(num)
 	enable(fire_array[num])
 	
 	
