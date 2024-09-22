@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://6fw5yc1frrfr"]
+[gd_scene load_steps=3 format=3 uid="uid://bf7r700chr0rl"]
 
 [ext_resource type="Script" path="res://Scripts/hose.gd" id="1_8nawp"]
+
+[sub_resource type="Gradient" id="Gradient_ldrib"]
+colors = PackedColorArray(0.1246, 0.379733, 0.89, 1, 0, 0.0708333, 0.85, 1)
 
 [node name="Hose" type="Line2D"]
 joint_mode = 2
@@ -9,3 +12,23 @@ end_cap_mode = 2
 script = ExtResource("1_8nawp")
 
 [node name="basePos" type="Node2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 300
+emission_shape = 1
+emission_sphere_radius = 4.0
+spread = 2.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+angle_min = 720.0
+angle_max = 720.0
+scale_amount_min = 3.0
+scale_amount_max = 4.0
+color_initial_ramp = SubResource("Gradient_ldrib")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(300, 0)
