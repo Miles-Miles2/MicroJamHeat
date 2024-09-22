@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvm74qpopswhd" path="res://Assets/Sprites/interior tileset.png" id="2_1prb1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_popiv"]
-size = Vector2(14, 24)
+size = Vector2(14, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b0qh"]
 radius = 4.12311

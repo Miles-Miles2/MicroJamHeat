@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 3000.0
+const SPEED = 9000.0
 @export var heldObj: Node2D
 @export var currentVehicle: Node2D
 @export var operatingVehicle: bool = false

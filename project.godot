@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="MicroJamHeat"
-run/main_scene="res://Scenes/city_map.tscn"
+run/main_scene="res://Scenes/FINISHED_city_map.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [dotnet]
 
