@@ -9,8 +9,9 @@ var numSegments = 1
 
 @export var parentObj: Node2D
 
+@export var beingHeld: bool = false
+@export var offset: Vector2
 
-@export var offset: Vector2 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +23,16 @@ func _ready() -> void:
 		
 func action(held: bool):
 	$CPUParticles2D.emitting = held
+	if held == true:
+		if $RayCast2D.is_colliding():
+			$extinguishArea.set_global_position($RayCast2D.get_collision_point())
+		else:
+			$extinguishArea.set_global_position($RayCast2D.global_position + Vector2.RIGHT.rotated($RayCast2D.rotation)*300)
+		for obj in $extinguishArea.get_overlapping_areas():
+			if obj.is_in_group("fire"):
+				obj.extinguish(0.5)
+				#print("touching fire")
+	
 func ik():
 	points[0] = targetPos - global_position
 	$Area2D.set_global_position(targetPos)
@@ -54,12 +65,16 @@ func _process(delta: float) -> void:
 		dist = min((hitPoint - targetPos).length(), 300)
 	else:
 		dist = 300
-	print($RayCast2D.get_collider())
+	
 	$CPUParticles2D.lifetime = dist/300
 	$CPUParticles2D.set_global_position(targetPos)
 	
 	#print(points.size())
 	$basePos.set_global_position(parentObj.global_position + (offset.rotated(parentObj.rotation)))
+	if points.size() <= 2 and beingHeld == false:
+		targetPos = $basePos.global_position
+		$Area2D.set_global_position(targetPos)
+	
 	ik()
 		
 	while (points[points.size()-1]-$basePos.position).length() > segmentLength:

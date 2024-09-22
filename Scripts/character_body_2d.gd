@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 								print("grab hose")
 								heldObj = obj.get_parent()
 								holdingHose = true
+								heldObj.beingHeld = true
 								break
 							else:
 								print("hold " + obj.name)
@@ -81,6 +82,7 @@ func dropItem():
 		heldObj.reparent(get_tree().root.get_child(0))
 	else:
 		holdingHose = false
+		heldObj.beingHeld = false
 	heldObj = null
 
 func grabItem(obj: Node2D):
