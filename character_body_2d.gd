@@ -5,6 +5,7 @@ const SPEED = 9000.0
 @export var heldObj: Node2D
 @export var currentVehicle: Node2D
 @export var operatingVehicle: bool = false
+var holdingHose := false
 
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector("left", "right", "up", "down")
@@ -20,9 +21,13 @@ func _physics_process(delta: float) -> void:
 				for obj in $mouseDetector.get_overlapping_areas():
 					#print(obj.name)
 					if obj.is_in_group("holdable") and heldObj == null:
-						print("hold " + obj.name)
-						grabItem(obj)
-						break
+						if obj.is_in_group("hose"):
+							heldObj = obj.get_parent()
+							holdingHose = true
+						else:
+							print("hold " + obj.name)
+							grabItem(obj)
+							break
 				for obj in $mouseDetector.get_overlapping_bodies():
 					if obj.is_in_group("vehicle"):
 						obj.driving = true
@@ -30,7 +35,7 @@ func _physics_process(delta: float) -> void:
 						currentVehicle = obj
 						reparent(obj)
 						position = Vector2.ZERO
-						set_collision_layer_value(0, false)
+						set_collision_layer_value(1, false)
 						break
 			
 		if Input.is_action_pressed("action"):
@@ -40,7 +45,9 @@ func _physics_process(delta: float) -> void:
 			if heldObj:
 				heldObj.action(false)
 				
-
+	if holdingHose == true and heldObj:
+		heldObj.targetPos = global_position
+	
 	if (Input.is_action_just_pressed("secondary")):
 			if operatingVehicle:
 				
@@ -57,7 +64,10 @@ func _physics_process(delta: float) -> void:
 
 
 func dropItem():
-	heldObj.reparent(get_tree().root.get_child(0))
+	if holdingHose == false:
+		heldObj.reparent(get_tree().root.get_child(0))
+	else:
+		holdingHose = false
 	heldObj = null
 
 func grabItem(obj: Node2D):

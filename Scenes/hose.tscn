@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf7r700chr0rl"]
+
+[ext_resource type="Script" path="res://Scripts/hose.gd" id="1_8nawp"]
+
+[node name="Hose" type="Line2D"]
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("1_8nawp")
+
+[node name="basePos" type="Node2D" parent="."]
