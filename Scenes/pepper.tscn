@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bo8ibjf5qe14y"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_42ncx"]
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_42ncx"]
 [ext_resource type="Texture2D" uid="uid://bvm74qpopswhd" path="res://Assets/Sprites/interior tileset.png" id="2_1prb1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_popiv"]

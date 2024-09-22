@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func generate():
-	var fire_index = int(randf_range(0,228))
+	var fire_index = int(randf_range(0,256))
 	return fire_index
 	
 func enable(fuego):
@@ -22,7 +22,7 @@ func enable(fuego):
 func _on_timer_timeout() -> void:
 	var num = generate()
 	print(num)
-	enable(fire_array[num]) 
+	enable(fire_array[num])
 	
 	
 	

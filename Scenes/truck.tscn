@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dw4rvf4p8404u"]
 
-[ext_resource type="Script" path="res://firetruckDriveScript.gd" id="1_fdjnd"]
+[ext_resource type="Script" path="res://Scripts/firetruckDriveScript.gd" id="1_fdjnd"]
 [ext_resource type="Curve" uid="uid://dqw2y7rixnn8a" path="res://powerCurve.tres" id="2_dsah4"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n3pko"]

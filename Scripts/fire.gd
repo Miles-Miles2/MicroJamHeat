@@ -2,7 +2,7 @@ extends Node2D
 
 
 #max fire size: 100
-@export var size: float
+@export var size: float = 25
 
 func _ready():
 	get_tree().call_group("fire", "disable")
@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 	if scale.x + scale.y < 1:
 		set_visible(false)
 		set_process(false)
+		size = 25
 
 func extinguish(amount: float):
 	size -= amount

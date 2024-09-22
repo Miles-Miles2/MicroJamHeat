@@ -28,6 +28,7 @@ project/assembly_name="MicroJamHeat"
 holdable=""
 fire=""
 vehicle=""
+hose=""
 
 [input]
 
