@@ -65,6 +65,7 @@ animations = [{
 radius = 7.0
 
 [node name="Node2D" type="Area2D" groups=["fire"]]
+collision_layer = 3
 script = ExtResource("1_ugdy8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

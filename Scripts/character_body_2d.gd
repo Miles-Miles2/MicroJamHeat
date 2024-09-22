@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 9000.0
-@export var heldObj: Node2D
+@export var heldObj: Node2D = null
 @export var currentVehicle: Node2D
 @export var operatingVehicle: bool = false
 var holdingHose := false
@@ -19,17 +19,22 @@ func _physics_process(delta: float) -> void:
 		if (Input.is_action_just_pressed("action")):
 			if heldObj == null:
 				for obj in $mouseDetector.get_overlapping_areas():
-					#print(obj.name)
-					if obj.is_in_group("holdable") and heldObj == null:
-						if obj.is_in_group("hose"):
-							heldObj = obj.get_parent()
-							holdingHose = true
-						else:
-							print("hold " + obj.name)
-							grabItem(obj)
-							break
+					print(obj.name)
+					if obj.is_in_group("holdable"):
+						if (obj.global_position - global_position).length() < 50:
+							print("can grab")
+							if obj.is_in_group("hose"):
+								print("grab hose")
+								heldObj = obj.get_parent()
+								holdingHose = true
+								heldObj.beingHeld = true
+								break
+							else:
+								print("hold " + obj.name)
+								grabItem(obj)
+								break
 				for obj in $mouseDetector.get_overlapping_bodies():
-					if obj.is_in_group("vehicle"):
+					if obj.is_in_group("vehicle") and heldObj == null:
 						obj.driving = true
 						operatingVehicle = true
 						currentVehicle = obj
@@ -47,6 +52,9 @@ func _physics_process(delta: float) -> void:
 				
 	if holdingHose == true and heldObj:
 		heldObj.targetPos = global_position
+		heldObj.get_node("CPUParticles2D").rotation = rotation
+		heldObj.get_node("RayCast2D").rotation = rotation
+		heldObj.get_node("RayCast2D").set_global_position(global_position)
 	
 	if (Input.is_action_just_pressed("secondary")):
 			if operatingVehicle:
@@ -61,6 +69,12 @@ func _physics_process(delta: float) -> void:
 				print("exiting")
 			elif heldObj:
 				dropItem()
+			else:
+				for obj in $mouseDetector.get_overlapping_areas():
+					#print(obj.name)
+					if obj.is_in_group("hose"):
+						obj.get_parent().cleanHose()
+
 
 
 func dropItem():
@@ -68,6 +82,7 @@ func dropItem():
 		heldObj.reparent(get_tree().root.get_child(0))
 	else:
 		holdingHose = false
+		heldObj.beingHeld = false
 	heldObj = null
 
 func grabItem(obj: Node2D):
