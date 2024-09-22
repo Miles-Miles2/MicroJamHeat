@@ -1,15 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5arx4gooo333"]
+[gd_scene load_steps=5 format=3 uid="uid://c5arx4gooo333"]
 
 [ext_resource type="PackedScene" uid="uid://c7rixn1i8dexv" path="res://Scenes/fire_extinguisher.tscn" id="2_7rtgw"]
 [ext_resource type="PackedScene" uid="uid://bo8ibjf5qe14y" path="res://Scenes/pepper.tscn" id="2_mqvpl"]
 [ext_resource type="PackedScene" uid="uid://caqw66g4dnwt2" path="res://Scenes/fire.tscn" id="3_dshp7"]
 [ext_resource type="PackedScene" uid="uid://dw4rvf4p8404u" path="res://Scenes/truck.tscn" id="4_kx5ty"]
-[ext_resource type="PackedScene" uid="uid://bf7r700chr0rl" path="res://Scenes/hose.tscn" id="5_7v8x7"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7gt6q"]
-radius = 2.23607
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6m86x"]
 
 [node name="fireextinguisher test scene" type="Node2D"]
 
@@ -20,20 +14,6 @@ position = Vector2(105, 61)
 
 [node name="Node2D" parent="." instance=ExtResource("3_dshp7")]
 position = Vector2(283, 229)
-
-[node name="Hose" parent="." node_paths=PackedStringArray("parentObj") groups=["holdable", "hose"] instance=ExtResource("5_7v8x7")]
-parentObj = NodePath("../RigidBody2D")
-
-[node name="Area2D" type="Area2D" parent="Hose" groups=["holdable", "hose"]]
-position = Vector2(71, 278)
-scale = Vector2(1.83419, 1.83419)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hose/Area2D"]
-shape = SubResource("CircleShape2D_7gt6q")
-
-[node name="Sprite2D" type="Sprite2D" parent="Hose/Area2D"]
-scale = Vector2(1.9723, 1.9723)
-texture = SubResource("PlaceholderTexture2D_6m86x")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("4_kx5ty")]
 position = Vector2(81, 266)
