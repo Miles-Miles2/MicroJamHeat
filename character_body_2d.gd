@@ -21,13 +21,14 @@ func _physics_process(delta: float) -> void:
 				for obj in $mouseDetector.get_overlapping_areas():
 					#print(obj.name)
 					if obj.is_in_group("holdable") and heldObj == null:
-						if obj.is_in_group("hose"):
-							heldObj = obj.get_parent()
-							holdingHose = true
-						else:
-							print("hold " + obj.name)
-							grabItem(obj)
-							break
+						if (obj.position - position).length() < 50:
+							if obj.is_in_group("hose"):
+								heldObj = obj.get_parent()
+								holdingHose = true
+							else:
+								print("hold " + obj.name)
+								grabItem(obj)
+								break
 				for obj in $mouseDetector.get_overlapping_bodies():
 					if obj.is_in_group("vehicle"):
 						obj.driving = true
