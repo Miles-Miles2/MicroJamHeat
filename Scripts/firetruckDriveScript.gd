@@ -34,6 +34,8 @@ func _physics_process(delta: float) -> void:
 	$ColorRect.size = Vector2(10, (attachedHose.water/60) * 40)
 	
 	if driving:
+		if $drivesfx.playing == false:
+			$drivesfx.play()
 		steer += -(Input.get_axis("drive_right", "drive_left") * 0.1)
 		steer = clamp(steer, -1, 1)
 		steer *= 0.9
@@ -42,6 +44,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		throttle = 0
 		steer = 0
+		if $drivesfx.playing == true:
+			$drivesfx.stop()
 		#throttle = clamp(throttle, -1, 1)
 		#throttle 
 		

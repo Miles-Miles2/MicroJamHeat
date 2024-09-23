@@ -1,10 +1,19 @@
+<<<<<<< HEAD
 [gd_scene load_steps=15 format=3 uid="uid://caqw66g4dnwt2"]
+=======
+[gd_scene load_steps=18 format=3 uid="uid://caqw66g4dnwt2"]
+>>>>>>> a53ff9f5c198afe4df6c53ce23ac630c171cfd23
 
 [ext_resource type="Texture2D" uid="uid://dgnr0li65jftm" path="res://Assets/Sprites/ARW 2D Flame Sprite Sheet .png" id="1_a47c5"]
 [ext_resource type="Script" path="res://Scripts/fire.gd" id="1_ugdy8"]
 [ext_resource type="AudioStream" uid="uid://7io1bksltk3o" path="res://Assets/Audio/SFX/quiet_fire-sound-222359.mp3" id="2_4v6h2"]
 [ext_resource type="AudioStream" uid="uid://badyyyp21gtas" path="res://Assets/Audio/SFX/loud_fire-sound-efftect-21991.mp3" id="4_c5056"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://cylh13eea8u4r" path="res://Assets/Audio/SFX/firegone.mp3" id="5_p8hqd"]
+=======
+[ext_resource type="AudioStream" uid="uid://cxod1mmb6m2hh" path="res://Assets/Audio/explosion.wav" id="5_y6ty2"]
+[ext_resource type="Texture2D" uid="uid://ddbjhbi4quirb" path="res://Assets/Sprites/smoke.png" id="6_dauy5"]
+>>>>>>> a53ff9f5c198afe4df6c53ce23ac630c171cfd23
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xm4a"]
 atlas = ExtResource("1_a47c5")
@@ -66,6 +75,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_e0yk8"]
 radius = 7.0
 
+[sub_resource type="Curve" id="Curve_ipioh"]
+_data = [Vector2(0, 0), 0.0, 1.96825, 0, 0, Vector2(0.443548, 0.208791), 0.0358591, 0.0358591, 0, 0, Vector2(1, 1), 2.24835, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_tlxoh"]
+offsets = PackedFloat32Array(0, 0.645833, 1)
+colors = PackedColorArray(1, 1, 1, 0.760784, 1, 1, 1, 0.729412, 1, 1, 1, 0)
+
 [node name="Node2D" type="Area2D" groups=["fire"]]
 script = ExtResource("1_ugdy8")
 
@@ -85,9 +102,33 @@ shape = SubResource("CircleShape2D_e0yk8")
 stream = ExtResource("4_c5056")
 volume_db = -10.0
 max_distance = 1000.0
-bus = &"SFX"
 parameters/looping = true
 
+<<<<<<< HEAD
 [node name="firedie" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_p8hqd")
 bus = &"SFX"
+=======
+[node name="extinguish" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_y6ty2")
+max_distance = 1000.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 4
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(5, 5)
+amount = 16
+lifetime = 7.0
+texture = ExtResource("6_dauy5")
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_ipioh")
+color_ramp = SubResource("Gradient_tlxoh")
+>>>>>>> a53ff9f5c198afe4df6c53ce23ac630c171cfd23

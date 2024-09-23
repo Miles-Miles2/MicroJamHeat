@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://caqw66g4dnwt2" path="res://Scenes/fire.tscn" id="4_jljm2"]
 [ext_resource type="Script" path="res://Scripts/stupid minimap fire stuff/house_4.gd" id="4_w7jr6"]
 [ext_resource type="Texture2D" uid="uid://d7fxsfli5fwd" path="res://Assets/Sprites/minimap.png" id="5_6ukgf"]
-[ext_resource type="PackedScene" uid="uid://sqiur2t621os" path="res://Scenes/fire_activation.tscn" id="5_et63s"]
+[ext_resource type="PackedScene" uid="uid://m7v7228tlw2m" path="res://Scenes/fire_activation.tscn" id="5_et63s"]
 [ext_resource type="Script" path="res://Scripts/stupid minimap fire stuff/house_5.gd" id="5_veyvw"]
 [ext_resource type="Script" path="res://Scripts/stupid minimap fire stuff/house_6.gd" id="6_sjk8c"]
 [ext_resource type="Script" path="res://Scripts/stupid minimap fire stuff/house_7.gd" id="7_j0o1v"]

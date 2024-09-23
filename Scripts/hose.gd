@@ -26,6 +26,7 @@ func _ready() -> void:
 func action(held: bool):
 	if water >= 0:
 		$CPUParticles2D.emitting = held
+		$AudioStreamPlayer2D.stream_paused = not held
 		if held == true:
 			if $RayCast2D.is_colliding():
 				$extinguishArea.set_global_position($RayCast2D.get_collision_point())
@@ -93,4 +94,5 @@ func _process(delta: float) -> void:
 	
 	if not beingHeld:
 		$CPUParticles2D.emitting = false
+		$AudioStreamPlayer2D.stream_paused = true
 	

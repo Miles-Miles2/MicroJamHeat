@@ -2,14 +2,14 @@ extends Area2D
 
 var timer: float = 0
 var activated: bool = false
-var amountLeft := 30.0
+var amountLeft := 15.0
 
 
 func _process(delta: float) -> void:
 	var space_rid = get_world_2d().space
 	var space_state = PhysicsServer2D.space_get_direct_state(space_rid)
 	
-	$ColorRect.size = Vector2((amountLeft/30) * 20, 3)
+	$ColorRect.size = Vector2((amountLeft/15) * 20, 3)
 	
 	timer += delta
 	#print(timer)
