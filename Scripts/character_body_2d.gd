@@ -83,9 +83,9 @@ func _physics_process(delta: float) -> void:
 	if (Input.is_action_just_pressed("secondary")):
 			if operatingVehicle:
 				
-				position = Vector2(-20, 20).rotated(currentVehicle.rotation)
+				position = Vector2(-30, -20)
 				reparent(get_tree().root.get_child(0))
-				set_collision_layer_value(1, true)
+				set_collision_layer_value(0, true)
 				operatingVehicle = false
 				currentVehicle.driving = false
 				currentVehicle = null

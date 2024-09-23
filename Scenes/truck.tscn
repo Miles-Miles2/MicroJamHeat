@@ -11,9 +11,8 @@ size = Vector2(36, 130)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ub8r0"]
 size = Vector2(53, 146)
 
-[sub_resource type="Animation" id="Animation_dpt1o"]
-resource_name = "drive"
-length = 135.0
+[sub_resource type="Animation" id="Animation_lg7lc"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,8 +26,9 @@ tracks/0/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_lg7lc"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_dpt1o"]
+resource_name = "drive"
+length = 135.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,7 +98,6 @@ color = Color(0.13, 0.3185, 1, 1)
 [node name="drivesfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_61hxd")
 pitch_scale = 2.0
-bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
