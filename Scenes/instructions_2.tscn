@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjuy8f012t6hk"]
+
+[ext_resource type="Texture2D" uid="uid://cdsq8qae4b81x" path="res://Assets/Sprites/360_F_551002059_Z5iJcCSVJ7Ismy3YXY4OJgwaDXU0zTOK.png" id="1_timya"]
+[ext_resource type="FontFile" uid="uid://cvqbh3ev8ydn4" path="res://Assets/upheavtt.ttf" id="2_f8nn8"]
+
+[sub_resource type="GDScript" id="GDScript_buy2g"]
+script/source = "extends Button
+
+@export var nextscene: String
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(nextscene)
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.98, 0.85)
+
+[node name="360F551002059Z5iJcCsvj7Ismy3yxy4oJgwaDxu0zTok" type="Sprite2D" parent="."]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_timya")
+
+[node name="Button5" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.00137836
+anchor_top = -0.709677
+anchor_right = 0.00137836
+anchor_bottom = -0.709677
+offset_left = -730.0
+offset_top = -393.0
+offset_right = 721.0
+offset_bottom = -249.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_f8nn8")
+theme_override_font_sizes/font_size = 150
+text = "controls
+"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = -725.0
+offset_top = -290.0
+offset_right = 726.0
+offset_bottom = -166.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_f8nn8")
+theme_override_font_sizes/font_size = 50
+text = "wasd/arrow keys to move"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="Button"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00137836
+anchor_top = 0.0645161
+anchor_right = 0.00137836
+anchor_bottom = 0.0645161
+offset_left = 8.0
+offset_top = 421.0
+offset_right = 1459.0
+offset_bottom = 545.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_f8nn8")
+theme_override_font_sizes/font_size = 50
+text = "Left click on truck to enter; right 
+click to exit"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Button"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.282258
+anchor_bottom = 0.427419
+offset_left = 8.0
+offset_top = 271.0
+offset_right = 1459.0
+offset_bottom = 395.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_f8nn8")
+theme_override_font_sizes/font_size = 50
+text = "aim hose with mouse and shoot by 
+holding left click; right click 
+it while its on thr ground
+to send it back to the truck"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="Button"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.548387
+anchor_bottom = -0.0806449
+offset_left = 3.0
+offset_top = 142.0
+offset_right = 1454.0
+offset_bottom = 266.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_f8nn8")
+theme_override_font_sizes/font_size = 50
+text = "Left click on hose while 
+standing over it to pick up, right
+click to drop
+"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -115.0
+offset_top = 254.0
+offset_right = 128.0
+offset_bottom = 399.0
+scale = Vector2(1, 0.759999)
+theme_override_fonts/font = ExtResource("2_f8nn8")
+theme_override_font_sizes/font_size = 100
+text = "Next
+"
+script = SubResource("GDScript_buy2g")
+nextscene = "res://Scenes/instructions_3.tscn"
+
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

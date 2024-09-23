@@ -2385,6 +2385,9 @@ sprite_frames = SubResource("SpriteFrames_bx5mk")
 autoplay = "default"
 
 [node name="game_manager" parent="." instance=ExtResource("5_et63s")]
+unique_name_in_owner = true
+
+[node name="gametime" type="Timer" parent="game_manager"]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -3381,3 +3384,4 @@ target = NodePath("../pepper")
 [connection signal="timeout" from="CanvasLayer/areadetection/Timer" to="CanvasLayer/areadetection/park" method="_on_timer_timeout"]
 [connection signal="area_entered" from="CanvasLayer/areadetection/house" to="CanvasLayer/areadetection/house" method="_on_area_entered"]
 [connection signal="area_exited" from="CanvasLayer/areadetection/house" to="CanvasLayer/areadetection/house" method="_on_area_exited"]
+[connection signal="timeout" from="game_manager/gametime" to="game_manager" method="_on_gametime_timeout"]

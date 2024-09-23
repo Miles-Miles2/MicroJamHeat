@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/FINISHED_city_map.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Music="*res://Scenes/music.tscn"
+
 [display]
 
 window/stretch/mode="viewport"

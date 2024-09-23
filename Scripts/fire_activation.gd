@@ -1,12 +1,17 @@
 extends Node
 
+@onready var gametime: Timer = $gametime
 @onready var fire_array = get_tree().get_nodes_in_group("fire")
 @onready var timer: Timer = $Timer
 
 var temp = 0
 
+var total_time = 0
+
 func _ready() -> void:
 	timer.start()
+	gametime.start()
+	
 
 
 func generate():
@@ -27,4 +32,5 @@ func _on_timer_timeout() -> void:
 	temp += 1
 	_ready()
 	
-	
+func _on_gametime_timeout() -> void:
+	total_time += 1

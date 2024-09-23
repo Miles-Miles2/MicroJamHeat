@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://5m8is76tu4aj"]
+
+[ext_resource type="Texture2D" uid="uid://cdsq8qae4b81x" path="res://Assets/Sprites/360_F_551002059_Z5iJcCSVJ7Ismy3YXY4OJgwaDXU0zTOK.png" id="1_14q1l"]
+[ext_resource type="FontFile" uid="uid://cvqbh3ev8ydn4" path="res://Assets/upheavtt.ttf" id="2_x66dp"]
+[ext_resource type="Script" path="res://Scenes/endtime.gd" id="3_3vgn8"]
+[ext_resource type="Script" path="res://Scenes/button_3.gd" id="3_5m784"]
+[ext_resource type="Script" path="res://Scenes/button_4.gd" id="4_wxv5n"]
+
+[node name="gameover" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.98, 0.85)
+
+[node name="360F551002059Z5iJcCsvj7Ismy3yxy4oJgwaDxu0zTok" type="Sprite2D" parent="."]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_14q1l")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -521.0
+offset_top = -369.0
+offset_right = 537.0
+offset_bottom = -181.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_x66dp")
+theme_override_font_sizes/font_size = 200
+text = "Game over"
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -839.0
+offset_top = -138.0
+offset_right = 834.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("2_x66dp")
+theme_override_font_sizes/font_size = 100
+text = "This time you lasted
+ 0 Seconds"
+flat = true
+script = ExtResource("3_3vgn8")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = -551.0
+offset_top = 158.0
+offset_right = -33.0
+offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("2_x66dp")
+theme_override_font_sizes/font_size = 100
+text = "Try 
+Again"
+script = ExtResource("3_5m784")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 155.0
+offset_right = 556.0
+offset_bottom = 343.0
+theme_override_fonts/font = ExtResource("2_x66dp")
+theme_override_font_sizes/font_size = 100
+text = "Back to
+Title"
+script = ExtResource("4_wxv5n")
+
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button4" to="Button3" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]

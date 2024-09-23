@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpoko71akgf6n"]
+
+[ext_resource type="Texture2D" uid="uid://dirq0mulfwxqv" path="res://Assets/Sprites/ok4.png" id="1_pgx62"]
+
+[sub_resource type="GDScript" id="GDScript_ai7ow"]
+script/source = "extends Button
+
+@export var nextscene: String
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(nextscene)
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ok4" type="Sprite2D" parent="."]
+texture = ExtResource("1_pgx62")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.3, 1.3)
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = -163.0
+offset_top = 102.0
+offset_right = 19.0
+offset_bottom = 155.0
+scale = Vector2(1.86294, 2.79485)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 24
+text = "Start"
+script = SubResource("GDScript_ai7ow")
+nextscene = "res://Scenes/instructions.tscn"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

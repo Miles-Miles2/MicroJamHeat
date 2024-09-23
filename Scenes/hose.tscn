@@ -43,6 +43,7 @@ collision_mask = 3
 [node name="extinguishArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="extinguishArea"]
+scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_2afor")
 
 [node name="Sprite2D" type="Sprite2D" parent="extinguishArea"]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://die7u8fbwk33g"]
+
+[ext_resource type="Texture2D" uid="uid://cdsq8qae4b81x" path="res://Assets/Sprites/360_F_551002059_Z5iJcCSVJ7Ismy3YXY4OJgwaDXU0zTOK.png" id="1_2b05g"]
+[ext_resource type="FontFile" uid="uid://cvqbh3ev8ydn4" path="res://Assets/upheavtt.ttf" id="2_ci1hc"]
+
+[sub_resource type="GDScript" id="GDScript_d6hc3"]
+script/source = "extends Button
+
+@export var nextscene: String
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(nextscene)
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.98, 0.85)
+
+[node name="360F551002059Z5iJcCsvj7Ismy3yxy4oJgwaDxu0zTok" type="Sprite2D" parent="."]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_2b05g")
+
+[node name="Button5" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.00137836
+anchor_top = -0.709677
+anchor_right = 0.00137836
+anchor_bottom = -0.709677
+offset_left = -730.0
+offset_top = -401.0
+offset_right = 721.0
+offset_bottom = -257.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_ci1hc")
+theme_override_font_sizes/font_size = 150
+text = "controls
+"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = -729.0
+offset_top = -271.0
+offset_right = 722.0
+offset_bottom = 259.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_ci1hc")
+theme_override_font_sizes/font_size = 64
+text = "When you're out of water, fill up
+by getting in your truck and
+driving past a fire hydrant
+
+Try your best to survive as
+long as you can, if three fires
+grow to big, its game over!
+
+good luck!"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -154.0
+offset_top = 259.0
+offset_right = 144.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("2_ci1hc")
+theme_override_font_sizes/font_size = 100
+text = "Start
+"
+script = SubResource("GDScript_d6hc3")
+nextscene = "res://Scenes/FINISHED_city_map.tscn"
+
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

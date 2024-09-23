@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcw6prvia3dso"]
+
+[ext_resource type="Texture2D" uid="uid://cdsq8qae4b81x" path="res://Assets/Sprites/360_F_551002059_Z5iJcCSVJ7Ismy3YXY4OJgwaDXU0zTOK.png" id="1_es7dk"]
+[ext_resource type="FontFile" uid="uid://cvqbh3ev8ydn4" path="res://Assets/upheavtt.ttf" id="2_bwip5"]
+[ext_resource type="Script" path="res://Scenes/button_2.gd" id="3_7qqk6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="360F551002059Z5iJcCsvj7Ismy3yxy4oJgwaDxu0zTok" type="Sprite2D" parent="."]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_es7dk")
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = -732.0
+offset_top = -167.0
+offset_right = 719.0
+offset_bottom = -43.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_bwip5")
+theme_override_font_sizes/font_size = 64
+text = "A RAGING FIRE HAS BROKEN OUT IN
+ YOUR TOWN!"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -2.0
+offset_top = 196.0
+offset_right = 1449.0
+offset_bottom = 320.0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_bwip5")
+theme_override_font_sizes/font_size = 64
+text = "AS THE ONLY FIRE FIGHTER AROUND
+ITS UP TO YOU TO FIX THINGS"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -188.0
+offset_top = 167.0
+offset_right = 173.0
+offset_bottom = 311.0
+theme_override_fonts/font = ExtResource("2_bwip5")
+theme_override_font_sizes/font_size = 100
+text = "next
+"
+script = ExtResource("3_7qqk6")
+nextscene = "res://Scenes/instructions_2.tscn"
+
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
