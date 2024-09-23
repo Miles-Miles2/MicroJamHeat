@@ -4,7 +4,8 @@ const segmentLength = 10
 const MAX_SEGMENTS = 50
 var numSegments = 1
 
-
+@export var water  := 5.0
+@export var CAPACITY_LIMIT := 30
 @export var targetPos := Vector2.ZERO
 
 @export var parentObj: Node2D
@@ -12,6 +13,7 @@ var numSegments = 1
 @export var beingHeld: bool = false
 @export var offset: Vector2
 
+var spraying := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,16 +24,21 @@ func _ready() -> void:
 		
 		
 func action(held: bool):
-	$CPUParticles2D.emitting = held
-	if held == true:
-		if $RayCast2D.is_colliding():
-			$extinguishArea.set_global_position($RayCast2D.get_collision_point())
-		else:
-			$extinguishArea.set_global_position($RayCast2D.global_position + Vector2.RIGHT.rotated($RayCast2D.rotation)*300)
-		for obj in $extinguishArea.get_overlapping_areas():
-			if obj.is_in_group("fire"):
-				obj.extinguish(0.5)
-				#print("touching fire")
+	if water >= 0:
+		$CPUParticles2D.emitting = held
+		if held == true:
+			if $RayCast2D.is_colliding():
+				$extinguishArea.set_global_position($RayCast2D.get_collision_point())
+			else:
+				$extinguishArea.set_global_position($RayCast2D.global_position + Vector2.RIGHT.rotated($RayCast2D.rotation)*300)
+			for obj in $extinguishArea.get_overlapping_areas():
+				if obj.is_in_group("fire"):
+					obj.extinguish(0.5)
+					#print("touching fire")
+	else:
+		$CPUParticles2D.emitting = false
+	spraying = held
+	
 	
 func ik():
 	points[0] = targetPos - global_position
@@ -59,6 +66,9 @@ func cleanHose():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if beingHeld == true and spraying == true and water > 0:
+		water -= delta
+	
 	var hitPoint = $RayCast2D.get_collision_point()
 	var dist
 	if $RayCast2D.get_collider() != null:
@@ -80,4 +90,7 @@ func _process(delta: float) -> void:
 	while (points[points.size()-1]-$basePos.position).length() > segmentLength:
 		add_point($basePos.position)
 		ik()
+	
+	if not beingHeld:
+		$CPUParticles2D.emitting = false
 	

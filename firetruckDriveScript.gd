@@ -14,6 +14,7 @@ var BR_vel: Vector2
 
 @export var attachedHose: Node2D
 
+
 #@export var debugLineFL: Line2D
 #@export var debugLineFR: Line2D
 #@export var traceLine: Line2D
@@ -163,8 +164,3 @@ func _physics_process(delta: float) -> void:
 	'''
 	
 	
-
-
-func _on_water_collect_area_entered(area: Area2D) -> void:
-	if area.is_in_group("waterSource"):
-		attachedHose.water = attachedHose.CAPACITY_LIMIT

@@ -7,8 +7,29 @@ const SPEED = 9000.0
 @export var operatingVehicle: bool = false
 var holdingHose := false
 
+var extinguisherInInventory := true
+var extinguisherScene = preload("res://Scenes/fire_extinguisher.tscn")
+
+
 func _physics_process(delta: float) -> void:
+	if not is_instance_valid(heldObj):
+		heldObj = null
+	
 	var input = Input.get_vector("left", "right", "up", "down")
+	
+	if Input.is_action_just_pressed("toggleExtinguisher"):
+		if extinguisherInInventory == true and not operatingVehicle and not heldObj:
+			var clone = extinguisherScene.instantiate()
+			add_child(clone)
+			grabItem(clone)
+			extinguisherInInventory = false
+		elif extinguisherInInventory == false and heldObj:
+			if heldObj.is_in_group("extinguisher"):
+				heldObj.queue_free()
+				heldObj = null
+				extinguisherInInventory = true
+	
+	
 	if not operatingVehicle:
 		velocity = input * SPEED * delta
 		move_and_slide()
@@ -45,6 +66,7 @@ func _physics_process(delta: float) -> void:
 			
 		if Input.is_action_pressed("action"):
 			if heldObj:
+				print(heldObj)
 				heldObj.action(true)
 		else:
 			if heldObj:
