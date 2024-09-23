@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7rixn1i8dexv"]
+[gd_scene load_steps=7 format=3 uid="uid://c7rixn1i8dexv"]
 
 [ext_resource type="Script" path="res://Scripts/fire_extinguisher.gd" id="1_bfw86"]
 [ext_resource type="Texture2D" uid="uid://c0f3at34a0jun" path="res://Assets/Sprites/fireextinguisher.png" id="1_uen6i"]
@@ -14,7 +14,9 @@ point_count = 2
 offsets = PackedFloat32Array(0.666667, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="fireExtinguisher" type="Area2D" groups=["holdable"]]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5yk0b"]
+
+[node name="fireExtinguisher" type="Area2D" groups=["extinguisher", "holdable"]]
 script = ExtResource("1_bfw86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -28,12 +30,11 @@ texture = ExtResource("1_uen6i")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(1, -5)
-emitting = false
 amount = 512
 lifetime = 0.9
 emission_shape = 1
 emission_sphere_radius = 2.0
-spread = 10.0
+spread = 5.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 250.0
 initial_velocity_max = 270.0
@@ -50,3 +51,7 @@ color_ramp = SubResource("Gradient_n3hdb")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="extinguishArea"]
 polygon = PackedVector2Array(4, -5, 194, -44, 195, 35)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(6.91631, 6.91631)
+texture = SubResource("PlaceholderTexture2D_5yk0b")

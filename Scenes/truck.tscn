@@ -1,16 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw4rvf4p8404u"]
+[gd_scene load_steps=6 format=3 uid="uid://dw4rvf4p8404u"]
 
 [ext_resource type="Script" path="res://Scripts/firetruckDriveScript.gd" id="1_fdjnd"]
 [ext_resource type="Curve" uid="uid://dqw2y7rixnn8a" path="res://powerCurve.tres" id="2_dsah4"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n3pko"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qib3j"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4o3eq"]
+[ext_resource type="Texture2D" uid="uid://c83vf1lumjlyq" path="res://Assets/Sprites/firetruck.png" id="3_o4lf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkynw"]
-size = Vector2(20, 40)
+size = Vector2(36, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub8r0"]
+size = Vector2(53, 146)
 
 [node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("FL", "FR", "BL", "BR") groups=["vehicle"]]
 position = Vector2(756, 520)
@@ -25,29 +23,31 @@ BR = NodePath("wheelBR2")
 powerCurve = ExtResource("2_dsah4")
 
 [node name="wheelFL2" type="Node2D" parent="."]
-position = Vector2(-10, -17.7625)
-
-[node name="Sprite2D" type="Sprite2D" parent="wheelFL2"]
-scale = Vector2(1, 7.065)
-texture = SubResource("PlaceholderTexture2D_n3pko")
+position = Vector2(-14, -32)
 
 [node name="wheelFR2" type="Node2D" parent="."]
-position = Vector2(10, -17.7625)
-
-[node name="Sprite2D" type="Sprite2D" parent="wheelFR2"]
-scale = Vector2(1, 6.695)
-texture = SubResource("PlaceholderTexture2D_qib3j")
+position = Vector2(14, -32)
 
 [node name="wheelBL2" type="Node2D" parent="."]
-position = Vector2(-10, 16.2375)
+position = Vector2(-14, 30)
 
 [node name="wheelBR2" type="Node2D" parent="."]
-position = Vector2(10, 16.2375)
+position = Vector2(14, 30)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, 0.237549)
-scale = Vector2(18.9722, 40.4751)
-texture = SubResource("PlaceholderTexture2D_4o3eq")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_o4lf0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_tkynw")
+
+[node name="waterCollectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waterCollectArea"]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_ub8r0")
+
+[connection signal="area_entered" from="waterCollectArea" to="." method="_on_water_collect_area_entered"]

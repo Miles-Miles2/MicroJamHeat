@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm5wsu8q5v108"]
+
+[ext_resource type="Texture2D" uid="uid://df2bpw3vqcs1v" path="res://Assets/Sprites/hydrant.png" id="1_2yisd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sig58"]
+radius = 14.0357
+
+[node name="Area2D" type="Area2D" groups=["waterSource"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_2yisd")
+region_enabled = true
+region_rect = Rect2(464, 160, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sig58")
