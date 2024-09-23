@@ -2,7 +2,7 @@ extends Node2D
 
 #max fire size: 100
 @export var size: float = 25
-@onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var collision: CollisionShape2D = $firecollide
 var grow = true
 
 func _ready():
@@ -10,9 +10,10 @@ func _ready():
 	
 
 func _process(delta: float) -> void:
+	scale = Vector2(size/25, size/25)
 	if grow:
 		size += delta * 2
-		scale = Vector2(size/25, size/25)
+		
 	if size >= 100:
 		grow = false
 	if scale.x + scale.y < 1:

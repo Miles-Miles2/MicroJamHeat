@@ -50,4 +50,11 @@ shape = SubResource("RectangleShape2D_tkynw")
 position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_ub8r0")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = 18.0
+offset_right = 5.0
+offset_bottom = 58.0
+color = Color(0.13, 0.3185, 1, 1)
+
 [connection signal="area_entered" from="waterCollectArea" to="." method="_on_water_collect_area_entered"]

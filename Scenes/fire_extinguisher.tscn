@@ -30,6 +30,7 @@ texture = ExtResource("1_uen6i")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(1, -5)
+emitting = false
 amount = 512
 lifetime = 0.9
 emission_shape = 1
@@ -55,3 +56,9 @@ polygon = PackedVector2Array(4, -5, 194, -44, 195, 35)
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 scale = Vector2(6.91631, 6.91631)
 texture = SubResource("PlaceholderTexture2D_5yk0b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = 9.0
+offset_right = 12.0
+offset_bottom = 12.0

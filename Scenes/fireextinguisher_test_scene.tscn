@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bo8ibjf5qe14y" path="res://Scenes/pepper.tscn" id="2_mqvpl"]
 [ext_resource type="PackedScene" uid="uid://caqw66g4dnwt2" path="res://Scenes/fire.tscn" id="3_dshp7"]
 [ext_resource type="PackedScene" uid="uid://dw4rvf4p8404u" path="res://Scenes/truck.tscn" id="4_kx5ty"]
-[ext_resource type="PackedScene" uid="uid://6fw5yc1frrfr" path="res://Scenes/hose.tscn" id="5_7v8x7"]
+[ext_resource type="PackedScene" uid="uid://bf7r700chr0rl" path="res://Scenes/hose.tscn" id="5_7v8x7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4nhfa"]
 
@@ -22,6 +22,7 @@ position = Vector2(105, 61)
 
 [node name="Node2D" parent="." instance=ExtResource("3_dshp7")]
 position = Vector2(283, 229)
+collision_layer = 3
 size = 50.0
 
 [node name="RigidBody2D" parent="." instance=ExtResource("4_kx5ty")]

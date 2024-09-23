@@ -75,6 +75,7 @@ func _physics_process(delta: float) -> void:
 				
 	if holdingHose == true and heldObj:
 		heldObj.targetPos = global_position
+		heldObj.get_node("Area2D").rotation = rotation
 		heldObj.get_node("CPUParticles2D").rotation = rotation
 		heldObj.get_node("RayCast2D").rotation = rotation
 		heldObj.get_node("RayCast2D").set_global_position(global_position)

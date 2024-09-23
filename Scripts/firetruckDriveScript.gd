@@ -31,6 +31,8 @@ func _ready() -> void:
 	#apply_force()
 
 func _physics_process(delta: float) -> void:
+	$ColorRect.size = Vector2(10, (attachedHose.water/60) * 40)
+	
 	if driving:
 		steer += -(Input.get_axis("drive_right", "drive_left") * 0.1)
 		steer = clamp(steer, -1, 1)

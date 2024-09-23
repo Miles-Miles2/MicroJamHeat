@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dw4rvf4p8404u" path="res://Scenes/truck.tscn" id="8_8b2wq"]
 [ext_resource type="PackedScene" uid="uid://bf7r700chr0rl" path="res://Scenes/hose.tscn" id="9_hk7rh"]
 [ext_resource type="PackedScene" uid="uid://dm5wsu8q5v108" path="res://Scenes/hydrant.tscn" id="10_k87ko"]
+[ext_resource type="Texture2D" uid="uid://bikydkhhfvpas" path="res://Assets/Sprites/hose.png" id="10_pf6fs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ru1g"]
 atlas = ExtResource("2_cvqw4")
@@ -2016,8 +2017,6 @@ pattern_16 = SubResource("TileMapPattern_0vsc6")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mqkk"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3vycr"]
-
 [node name="citymap" type="Node2D"]
 position = Vector2(-33, 37)
 
@@ -2085,932 +2084,1178 @@ region_rect = Rect2(408, 80, 8, 8)
 [node name="Fire" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(487, 204)
+collision_layer = 3
 
 [node name="Fires2" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(535, 192)
+collision_layer = 3
 
 [node name="Fires3" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(583, 198)
+collision_layer = 3
 
 [node name="Fires4" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(626, 216)
+collision_layer = 3
 
 [node name="Fires5" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(627, 262)
+collision_layer = 3
 
 [node name="Fires6" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(628, 312)
+collision_layer = 3
 
 [node name="Fires7" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(504, 300)
+collision_layer = 3
 
 [node name="Fires8" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(487, 289)
+collision_layer = 3
 
 [node name="Fires9" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(487, 270)
+collision_layer = 3
 
 [node name="Fires10" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(504, 265)
+collision_layer = 3
 
 [node name="Fire2" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(855, 573)
+collision_layer = 3
 
 [node name="Fire7" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(828, 252)
+collision_layer = 3
 
 [node name="Fire8" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(828, 299)
+collision_layer = 3
 
 [node name="Fire9" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(887, 278)
+collision_layer = 3
 
 [node name="Fire10" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(903, 279)
+collision_layer = 3
 
 [node name="Fire11" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(935, 279)
+collision_layer = 3
 
 [node name="Fire12" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(951, 278)
+collision_layer = 3
 
 [node name="Fire13" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(980, 216)
+collision_layer = 3
 
 [node name="Fire57" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1207, 264)
+collision_layer = 3
 
 [node name="Fire58" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1213, 327)
+collision_layer = 3
 
 [node name="Fire59" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1238, 272)
+collision_layer = 3
 
 [node name="Fire60" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1239, 255)
+collision_layer = 3
 
 [node name="Fire61" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1256, 193)
+collision_layer = 3
 
 [node name="Fire62" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1302, 192)
+collision_layer = 3
 
 [node name="Fire63" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1360, 220)
+collision_layer = 3
 
 [node name="Fire66" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1591, 210)
+collision_layer = 3
 
 [node name="Fire67" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1623, 215)
+collision_layer = 3
 
 [node name="Fire68" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1671, 216)
+collision_layer = 3
 
 [node name="Fire69" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1648, 199)
+collision_layer = 3
 
 [node name="Fire70" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1703, 207)
+collision_layer = 3
 
 [node name="Fire71" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1727, 249)
+collision_layer = 3
 
 [node name="Fire72" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1729, 281)
+collision_layer = 3
 
 [node name="Fire73" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1731, 325)
+collision_layer = 3
 
 [node name="Fire74" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1639, 294)
+collision_layer = 3
 
 [node name="Fire75" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1655, 294)
+collision_layer = 3
 
 [node name="Fire76" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1647, 280)
+collision_layer = 3
 
 [node name="Fire95" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1960, 263)
+collision_layer = 3
 
 [node name="Fire96" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1959, 208)
+collision_layer = 3
 
 [node name="Fire97" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2006, 191)
+collision_layer = 3
 
 [node name="Fire98" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2055, 191)
+collision_layer = 3
 
 [node name="Fire99" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2099, 217)
+collision_layer = 3
 
 [node name="Fire113" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2327, 223)
+collision_layer = 3
 
 [node name="Fire114" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2359, 201)
+collision_layer = 3
 
 [node name="Fire115" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2407, 202)
+collision_layer = 3
 
 [node name="Fire116" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2440, 223)
+collision_layer = 3
 
 [node name="Fire117" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2467, 265)
+collision_layer = 3
 
 [node name="Fire133" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2694, 208)
+collision_layer = 3
 
 [node name="Fire134" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2727, 200)
+collision_layer = 3
 
 [node name="Fire135" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2791, 199)
+collision_layer = 3
 
 [node name="Fire136" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2834, 298)
+collision_layer = 3
 
 [node name="Fire137" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2817, 329)
+collision_layer = 3
 
 [node name="Fire138" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2727, 332)
+collision_layer = 3
 
 [node name="Fire139" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2727, 318)
+collision_layer = 3
 
 [node name="Fire140" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2695, 330)
+collision_layer = 3
 
 [node name="Fire141" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2695, 313)
+collision_layer = 3
 
 [node name="Fire142" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2671, 250)
+collision_layer = 3
 
 [node name="Fire143" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2695, 575)
+collision_layer = 3
 
 [node name="Fire144" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2728, 567)
+collision_layer = 3
 
 [node name="Fire145" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2792, 566)
+collision_layer = 3
 
 [node name="Fire146" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2835, 665)
+collision_layer = 3
 
 [node name="Fire147" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2818, 696)
+collision_layer = 3
 
 [node name="Fire148" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2728, 699)
+collision_layer = 3
 
 [node name="Fire149" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2728, 685)
+collision_layer = 3
 
 [node name="Fire150" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2696, 697)
+collision_layer = 3
 
 [node name="Fire151" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2696, 680)
+collision_layer = 3
 
 [node name="Fire152" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2672, 617)
+collision_layer = 3
 
 [node name="Fire153" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(486, 945)
+collision_layer = 3
 
 [node name="Fire154" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(519, 937)
+collision_layer = 3
 
 [node name="Fire155" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(583, 936)
+collision_layer = 3
 
 [node name="Fire156" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(626, 1035)
+collision_layer = 3
 
 [node name="Fire157" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(609, 1066)
+collision_layer = 3
 
 [node name="Fire158" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(519, 1069)
+collision_layer = 3
 
 [node name="Fire159" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(519, 1055)
+collision_layer = 3
 
 [node name="Fire160" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(487, 1067)
+collision_layer = 3
 
 [node name="Fire161" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(487, 1050)
+collision_layer = 3
 
 [node name="Fire162" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(463, 987)
+collision_layer = 3
 
 [node name="Fire118" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2467, 292)
+collision_layer = 3
 
 [node name="Fire119" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2448, 330)
+collision_layer = 3
 
 [node name="Fire120" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2318, 330)
+collision_layer = 3
 
 [node name="Fire121" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2299, 293)
+collision_layer = 3
 
 [node name="Fire122" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2299, 264)
+collision_layer = 3
 
 [node name="Fire123" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(854, 942)
+collision_layer = 3
 
 [node name="Fire124" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(886, 920)
+collision_layer = 3
 
 [node name="Fire125" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(934, 921)
+collision_layer = 3
 
 [node name="Fire126" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(967, 942)
+collision_layer = 3
 
 [node name="Fire127" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(994, 984)
+collision_layer = 3
 
 [node name="Fire128" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(994, 1011)
+collision_layer = 3
 
 [node name="Fire129" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(975, 1049)
+collision_layer = 3
 
 [node name="Fire130" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(845, 1049)
+collision_layer = 3
 
 [node name="Fire131" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(826, 1012)
+collision_layer = 3
 
 [node name="Fire132" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(826, 983)
+collision_layer = 3
 
 [node name="Fire100" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2071, 263)
+collision_layer = 3
 
 [node name="Fire101" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1991, 259)
+collision_layer = 3
 
 [node name="Fire102" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2039, 260)
+collision_layer = 3
 
 [node name="Fire103" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2090, 329)
+collision_layer = 3
 
 [node name="Fire104" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1961, 1367)
+collision_layer = 3
 
 [node name="Fire105" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1960, 1312)
+collision_layer = 3
 
 [node name="Fire106" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2007, 1295)
+collision_layer = 3
 
 [node name="Fire107" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2056, 1295)
+collision_layer = 3
 
 [node name="Fire108" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2100, 1321)
+collision_layer = 3
 
 [node name="Fire109" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2072, 1367)
+collision_layer = 3
 
 [node name="Fire110" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1992, 1363)
+collision_layer = 3
 
 [node name="Fire111" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2040, 1364)
+collision_layer = 3
 
 [node name="Fire112" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2091, 1433)
+collision_layer = 3
 
 [node name="Fire77" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1567, 250)
+collision_layer = 3
 
 [node name="Fire78" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1564, 282)
+collision_layer = 3
 
 [node name="Fire79" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1561, 326)
+collision_layer = 3
 
 [node name="Fire80" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2327, 1312)
+collision_layer = 3
 
 [node name="Fire81" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2359, 1317)
+collision_layer = 3
 
 [node name="Fire82" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2407, 1318)
+collision_layer = 3
 
 [node name="Fire83" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2384, 1301)
+collision_layer = 3
 
 [node name="Fire84" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2439, 1309)
+collision_layer = 3
 
 [node name="Fire85" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2463, 1351)
+collision_layer = 3
 
 [node name="Fire86" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2465, 1383)
+collision_layer = 3
 
 [node name="Fire87" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2467, 1427)
+collision_layer = 3
 
 [node name="Fire88" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2375, 1396)
+collision_layer = 3
 
 [node name="Fire89" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2391, 1396)
+collision_layer = 3
 
 [node name="Fire90" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2375, 1373)
+collision_layer = 3
 
 [node name="Fire94" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2391, 1373)
+collision_layer = 3
 
 [node name="Fire91" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2303, 1352)
+collision_layer = 3
 
 [node name="Fire92" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2300, 1384)
+collision_layer = 3
 
 [node name="Fire93" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2297, 1428)
+collision_layer = 3
 
 [node name="Fire64" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1358, 262)
+collision_layer = 3
 
 [node name="Fire65" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1353, 326)
+collision_layer = 3
 
 [node name="Fire14" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(936, 190)
+collision_layer = 3
 
 [node name="Fire15" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(904, 196)
+collision_layer = 3
 
 [node name="Fire16" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(855, 192)
+collision_layer = 3
 
 [node name="Fire17" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(460, 621)
+collision_layer = 3
 
 [node name="Fire18" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(460, 668)
+collision_layer = 3
 
 [node name="Fire19" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(519, 647)
+collision_layer = 3
 
 [node name="Fire20" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(535, 648)
+collision_layer = 3
 
 [node name="Fire21" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(567, 648)
+collision_layer = 3
 
 [node name="Fire22" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(583, 647)
+collision_layer = 3
 
 [node name="Fire23" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(612, 585)
+collision_layer = 3
 
 [node name="Fire24" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(568, 559)
+collision_layer = 3
 
 [node name="Fire25" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(536, 565)
+collision_layer = 3
 
 [node name="Fire26" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(487, 561)
+collision_layer = 3
 
 [node name="Fire27" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(461, 1354)
+collision_layer = 3
 
 [node name="Fire28" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(461, 1401)
+collision_layer = 3
 
 [node name="Fire29" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(520, 1380)
+collision_layer = 3
 
 [node name="Fire30" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(536, 1381)
+collision_layer = 3
 
 [node name="Fire31" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(568, 1381)
+collision_layer = 3
 
 [node name="Fire32" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(584, 1380)
+collision_layer = 3
 
 [node name="Fire33" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(613, 1318)
+collision_layer = 3
 
 [node name="Fire34" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(569, 1292)
+collision_layer = 3
 
 [node name="Fire35" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(537, 1298)
+collision_layer = 3
 
 [node name="Fire36" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(488, 1294)
+collision_layer = 3
 
 [node name="Fire37" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1196, 1355)
+collision_layer = 3
 
 [node name="Fire38" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1196, 1402)
+collision_layer = 3
 
 [node name="Fire39" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1255, 1381)
+collision_layer = 3
 
 [node name="Fire40" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1271, 1382)
+collision_layer = 3
 
 [node name="Fire41" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1303, 1382)
+collision_layer = 3
 
 [node name="Fire42" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1319, 1381)
+collision_layer = 3
 
 [node name="Fire43" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1348, 1319)
+collision_layer = 3
 
 [node name="Fire44" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1304, 1293)
+collision_layer = 3
 
 [node name="Fire45" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1272, 1299)
+collision_layer = 3
 
 [node name="Fire46" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1223, 1295)
+collision_layer = 3
 
 [node name="Fire47" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2300, 619)
+collision_layer = 3
 
 [node name="Fire48" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2300, 666)
+collision_layer = 3
 
 [node name="Fire163" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2065, 867)
+collision_layer = 3
 
 [node name="Fire188" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2046, 868)
+collision_layer = 3
 
 [node name="Fire164" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1992, 818)
+collision_layer = 3
 
 [node name="Fire165" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2065, 771)
+collision_layer = 3
 
 [node name="Fire187" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2043, 774)
+collision_layer = 3
 
 [node name="Fire166" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1892, 821)
+collision_layer = 3
 
 [node name="Fire189" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1901, 833)
+collision_layer = 3
 
 [node name="Fire167" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1841, 771)
+collision_layer = 3
 
 [node name="Fire186" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1818, 775)
+collision_layer = 3
 
 [node name="Fire168" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1831, 866)
+collision_layer = 3
 
 [node name="Fire169" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1702, 946)
+collision_layer = 3
 
 [node name="Fire170" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1655, 951)
+collision_layer = 3
 
 [node name="Fire171" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1639, 946)
+collision_layer = 3
 
 [node name="Fire172" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1591, 945)
+collision_layer = 3
 
 [node name="Fire173" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1692, 692)
+collision_layer = 3
 
 [node name="Fire185" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1714, 693)
+collision_layer = 3
 
 [node name="Fire174" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1655, 673)
+collision_layer = 3
 
 [node name="Fire175" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1639, 675)
+collision_layer = 3
 
 [node name="Fire176" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1580, 693)
+collision_layer = 3
 
 [node name="Fire184" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1601, 693)
+collision_layer = 3
 
 [node name="Fire177" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1450, 770)
+collision_layer = 3
 
 [node name="Fire183" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1472, 770)
+collision_layer = 3
 
 [node name="Fire178" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1463, 866)
+collision_layer = 3
 
 [node name="Fire179" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1405, 816)
+collision_layer = 3
 
 [node name="Fire190" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1395, 832)
+collision_layer = 3
 
 [node name="Fire180" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1303, 817)
+collision_layer = 3
 
 [node name="Fire181" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1251, 868)
+collision_layer = 3
 
 [node name="Fire191" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1231, 866)
+collision_layer = 3
 
 [node name="Fire182" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1253, 767)
+collision_layer = 3
 
 [node name="Fire192" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1231, 776)
+collision_layer = 3
 
 [node name="Fire49" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2359, 645)
+collision_layer = 3
 
 [node name="Fire50" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2375, 646)
+collision_layer = 3
 
 [node name="Fire51" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2407, 646)
+collision_layer = 3
 
 [node name="Fire52" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2423, 645)
+collision_layer = 3
 
 [node name="Fire53" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2452, 583)
+collision_layer = 3
 
 [node name="Fire54" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2408, 557)
+collision_layer = 3
 
 [node name="Fire55" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2376, 563)
+collision_layer = 3
 
 [node name="Fire56" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2327, 559)
+collision_layer = 3
 
 [node name="Fires11" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(903, 561)
+collision_layer = 3
 
 [node name="Fires12" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(951, 567)
+collision_layer = 3
 
 [node name="Fires13" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(994, 585)
+collision_layer = 3
 
 [node name="Fires14" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(995, 631)
+collision_layer = 3
 
 [node name="Fires15" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(996, 681)
+collision_layer = 3
 
 [node name="Fires16" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(872, 669)
+collision_layer = 3
 
 [node name="Fires17" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(855, 658)
+collision_layer = 3
 
 [node name="Fires18" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(855, 639)
+collision_layer = 3
 
 [node name="Fires19" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(872, 634)
+collision_layer = 3
 
 [node name="Fire3" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(854, 1307)
+collision_layer = 3
 
 [node name="Fires20" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(902, 1295)
+collision_layer = 3
 
 [node name="Fires21" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(950, 1301)
+collision_layer = 3
 
 [node name="Fires22" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(993, 1319)
+collision_layer = 3
 
 [node name="Fires23" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(994, 1365)
+collision_layer = 3
 
 [node name="Fires24" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(995, 1415)
+collision_layer = 3
 
 [node name="Fires25" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(871, 1403)
+collision_layer = 3
 
 [node name="Fires26" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(854, 1392)
+collision_layer = 3
 
 [node name="Fires27" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(854, 1373)
+collision_layer = 3
 
 [node name="Fires28" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(871, 1368)
+collision_layer = 3
 
 [node name="Fire4" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2695, 1319)
+collision_layer = 3
 
 [node name="Fires29" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2743, 1307)
+collision_layer = 3
 
 [node name="Fires30" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2791, 1313)
+collision_layer = 3
 
 [node name="Fires31" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2834, 1331)
+collision_layer = 3
 
 [node name="Fires32" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2835, 1377)
+collision_layer = 3
 
 [node name="Fires33" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2836, 1427)
+collision_layer = 3
 
 [node name="Fires34" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2712, 1415)
+collision_layer = 3
 
 [node name="Fires35" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2695, 1404)
+collision_layer = 3
 
 [node name="Fires36" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2695, 1385)
+collision_layer = 3
 
 [node name="Fires37" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2712, 1380)
+collision_layer = 3
 
 [node name="Fire5" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2694, 940)
+collision_layer = 3
 
 [node name="Fires38" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2742, 928)
+collision_layer = 3
 
 [node name="Fires39" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2790, 934)
+collision_layer = 3
 
 [node name="Fires40" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2833, 952)
+collision_layer = 3
 
 [node name="Fires41" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2834, 998)
+collision_layer = 3
 
 [node name="Fires42" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2835, 1048)
+collision_layer = 3
 
 [node name="Fires43" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2711, 1036)
+collision_layer = 3
 
 [node name="Fires44" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2694, 1025)
+collision_layer = 3
 
 [node name="Fires45" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2694, 1006)
+collision_layer = 3
 
 [node name="Fires46" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2711, 1001)
+collision_layer = 3
 
 [node name="Fire6" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(2327, 939)
+collision_layer = 3
 
 [node name="Fires47" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2375, 927)
+collision_layer = 3
 
 [node name="Fires48" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2423, 933)
+collision_layer = 3
 
 [node name="Fires49" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2466, 951)
+collision_layer = 3
 
 [node name="Fires50" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2467, 997)
+collision_layer = 3
 
 [node name="Fires51" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2468, 1047)
+collision_layer = 3
 
 [node name="Fires52" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2344, 1035)
+collision_layer = 3
 
 [node name="Fires53" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2327, 1024)
+collision_layer = 3
 
 [node name="Fires54" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2327, 1005)
+collision_layer = 3
 
 [node name="Fires55" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 position = Vector2(2344, 1000)
+collision_layer = 3
 
 [node name="RigidBody2D" parent="." node_paths=PackedStringArray("attachedHose") instance=ExtResource("8_8b2wq")]
 position = Vector2(1296, 467)
@@ -3026,8 +3271,10 @@ parentObj = NodePath("../RigidBody2D")
 shape = SubResource("CircleShape2D_8mqkk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hose/Area2D"]
-scale = Vector2(14.345, 14.345)
-texture = SubResource("PlaceholderTexture2D_3vycr")
+z_index = 10
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_pf6fs")
 
 [node name="Area2D" parent="." instance=ExtResource("10_k87ko")]
 position = Vector2(1187, 594)
