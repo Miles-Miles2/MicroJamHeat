@@ -4,8 +4,8 @@ const segmentLength = 10
 const MAX_SEGMENTS = 50
 var numSegments = 1
 
-@export var water  := 5.0
-@export var CAPACITY_LIMIT := 30
+@export var water  := 60.0
+@export var CAPACITY_LIMIT := 60
 @export var targetPos := Vector2.ZERO
 
 @export var parentObj: Node2D

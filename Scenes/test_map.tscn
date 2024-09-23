@@ -679,11 +679,8 @@ texture = ExtResource("4_qdk76")
 9:48/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.125, 1.4375, -2, 1.9375, 8, -8, 8)
 9:48/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:48/0 = 0
-14:48/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:48/0 = 0
-16:48/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:48/0 = 0
-18:48/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:48/0 = 0
 21:48/0 = 0
 20:49/0 = 0
@@ -704,17 +701,13 @@ texture = ExtResource("4_qdk76")
 9:50/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.6875, -8, 0.3125, 8, -8, 8)
 9:50/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:50/0 = 0
-14:50/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:50/0 = 0
-16:50/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:50/0 = 0
-18:50/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:50/0 = 0
 21:50/0 = 0
 3:51/0 = 0
 3:51/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:51/0 = 0
-5:51/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:51/0 = 0
 27:51/0 = 0
 29:51/0 = 0
@@ -731,11 +724,8 @@ texture = ExtResource("4_qdk76")
 9:52/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.6875, -8, 0.3125, 8, -8, 8)
 9:52/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:52/0 = 0
-14:52/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:52/0 = 0
-16:52/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:52/0 = 0
-18:52/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:53/0 = 0
 5:53/0 = 0
 6:53/0 = 0
@@ -2722,7 +2712,11 @@ position = Vector2(2300, 666)
 
 [node name="Fire163" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(2056, 867)
+position = Vector2(2065, 867)
+
+[node name="Fire188" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(2046, 868)
 
 [node name="Fire164" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
@@ -2730,15 +2724,27 @@ position = Vector2(1992, 818)
 
 [node name="Fire165" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(2055, 771)
+position = Vector2(2065, 771)
+
+[node name="Fire187" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(2043, 774)
 
 [node name="Fire166" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1895, 819)
+position = Vector2(1892, 821)
+
+[node name="Fire189" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(1901, 833)
 
 [node name="Fire167" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1830, 771)
+position = Vector2(1841, 771)
+
+[node name="Fire186" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(1818, 775)
 
 [node name="Fire168" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
@@ -2762,7 +2768,11 @@ position = Vector2(1591, 945)
 
 [node name="Fire173" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1703, 690)
+position = Vector2(1692, 692)
+
+[node name="Fire185" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(1714, 693)
 
 [node name="Fire174" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
@@ -2774,103 +2784,31 @@ position = Vector2(1639, 675)
 
 [node name="Fire176" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1590, 690)
+position = Vector2(1580, 693)
+
+[node name="Fire184" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(1601, 693)
 
 [node name="Fire177" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1463, 770)
+position = Vector2(1450, 770)
+
+[node name="Fire183" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(1472, 770)
 
 [node name="Fire178" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
 position = Vector2(1463, 866)
 
-[node name="Fire183" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+[node name="Fire179" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1562, 741)
-
-[node name="Fire184" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1592, 772)
-
-[node name="Fire185" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1592, 772)
-
-[node name="Fire186" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1642, 852)
-
-[node name="Fire187" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1673, 789)
-
-[node name="Fire188" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1641, 756)
-
-[node name="Fire189" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1705, 916)
+position = Vector2(1405, 816)
 
 [node name="Fire190" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1578, 901)
-
-[node name="Fire191" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1721, 852)
-
-[node name="Fire192" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1593, 854)
-
-[node name="Fire193" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1719, 741)
-
-[node name="Fire194" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1641, 915)
-
-[node name="Fire195" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1624, 807)
-
-[node name="Fire196" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1690, 870)
-
-[node name="Fire197" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1705, 772)
-
-[node name="Fire198" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1561, 822)
-
-[node name="Fire199" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1672, 726)
-
-[node name="Fire200" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1736, 886)
-
-[node name="Fire201" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1623, 885)
-
-[node name="Fire202" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1720, 805)
-
-[node name="Fire203" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1674, 821)
-
-[node name="Fire179" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
-z_index = 2
-position = Vector2(1399, 819)
+position = Vector2(1395, 832)
 
 [node name="Fire180" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
@@ -2878,11 +2816,19 @@ position = Vector2(1303, 817)
 
 [node name="Fire181" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1239, 866)
+position = Vector2(1251, 868)
+
+[node name="Fire191" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(1231, 866)
 
 [node name="Fire182" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
-position = Vector2(1239, 770)
+position = Vector2(1253, 767)
+
+[node name="Fire192" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
+z_index = 2
+position = Vector2(1231, 776)
 
 [node name="Fire49" parent="Fires - DO NOT OPEN (It\'s scary)" instance=ExtResource("7_1ossr")]
 z_index = 2
@@ -3072,7 +3018,7 @@ position = Vector2(1296, 467)
 attachedHose = NodePath("../Hose")
 
 [node name="Hose" parent="." node_paths=PackedStringArray("parentObj") groups=["holdable", "hose"] instance=ExtResource("9_hk7rh")]
-position = Vector2(1283, 477)
+position = Vector2(1278, 475)
 parentObj = NodePath("../RigidBody2D")
 
 [node name="Area2D" type="Area2D" parent="Hose" groups=["holdable", "hose"]]
