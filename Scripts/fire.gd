@@ -4,6 +4,7 @@ extends Node2D
 @export var size: float = 25
 @onready var collision: CollisionShape2D = $firecollide
 var grow = true
+@onready var firesfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready():
 	get_tree().call_group("fire", "disable")

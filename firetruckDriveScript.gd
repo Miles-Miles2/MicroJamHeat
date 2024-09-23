@@ -14,7 +14,6 @@ var BR_vel: Vector2
 
 @export var attachedHose: Node2D
 
-
 #@export var debugLineFL: Line2D
 #@export var debugLineFR: Line2D
 #@export var traceLine: Line2D
@@ -22,6 +21,7 @@ var BR_vel: Vector2
 @export var throttle: float
 @export var steer: float
 @export var powerCurve: Curve
+@onready var drivesfx: AnimationPlayer = $AnimationPlayer
 
 var angle: float
 
@@ -33,12 +33,14 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if driving:
+		drivesfx.pause()
 		steer += -(Input.get_axis("drive_right", "drive_left") * 0.1)
 		steer = clamp(steer, -1, 1)
 		steer *= 0.9
 		
 		throttle = Input.get_axis("drive_backward", "drive_forward")
 	else:
+		drivesfx.play("drive")
 		throttle = 0
 		steer = 0
 		#throttle = clamp(throttle, -1, 1)

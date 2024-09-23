@@ -18,6 +18,7 @@ func enable(fuego):
 	fuego.get_node("firecollide").disabled = false
 	fuego.set_visible(true)
 	fuego.PROCESS_MODE_ALWAYS
+	fuego.firesfx.play()
 	_ready()
 
 func _on_timer_timeout() -> void:

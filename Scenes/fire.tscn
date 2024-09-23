@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://caqw66g4dnwt2"]
+[gd_scene load_steps=14 format=3 uid="uid://caqw66g4dnwt2"]
 
 [ext_resource type="Texture2D" uid="uid://dgnr0li65jftm" path="res://Assets/Sprites/ARW 2D Flame Sprite Sheet .png" id="1_a47c5"]
 [ext_resource type="Script" path="res://Scripts/fire.gd" id="1_ugdy8"]
 [ext_resource type="AudioStream" uid="uid://7io1bksltk3o" path="res://Assets/Audio/SFX/quiet_fire-sound-222359.mp3" id="2_4v6h2"]
+[ext_resource type="AudioStream" uid="uid://badyyyp21gtas" path="res://Assets/Audio/SFX/loud_fire-sound-efftect-21991.mp3" id="4_c5056"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xm4a"]
 atlas = ExtResource("1_a47c5")
@@ -78,3 +79,10 @@ stream = ExtResource("2_4v6h2")
 
 [node name="firecollide" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e0yk8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_c5056")
+volume_db = -10.0
+max_distance = 1000.0
+bus = &"SFX"
+parameters/looping = true
