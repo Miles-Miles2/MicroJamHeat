@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func generate():
-	var fire_index = int(randf_range(0,256))
+	var fire_index = int(randf_range(0,fire_array.size()-1))
 	return fire_index
 	
 func enable(fuego):

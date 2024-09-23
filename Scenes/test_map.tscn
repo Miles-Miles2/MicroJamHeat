@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dfpxf3wmidxnf"]
+[gd_scene load_steps=41 format=3 uid="uid://du645sbbdhe7r"]
 
 [ext_resource type="Texture2D" uid="uid://d7fxsfli5fwd" path="res://Assets/Sprites/minimap.png" id="1_irhgj"]
 [ext_resource type="Texture2D" uid="uid://dgnr0li65jftm" path="res://Assets/Sprites/ARW 2D Flame Sprite Sheet .png" id="2_cvqw4"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://caqw66g4dnwt2" path="res://Scenes/fire.tscn" id="7_1ossr"]
 [ext_resource type="PackedScene" uid="uid://dw4rvf4p8404u" path="res://Scenes/truck.tscn" id="8_8b2wq"]
 [ext_resource type="PackedScene" uid="uid://bf7r700chr0rl" path="res://Scenes/hose.tscn" id="9_hk7rh"]
-[ext_resource type="PackedScene" uid="uid://d7xvwvx7mbiq" path="res://Scenes/hydrant.tscn" id="10_k87ko"]
+[ext_resource type="PackedScene" uid="uid://dm5wsu8q5v108" path="res://Scenes/hydrant.tscn" id="10_k87ko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ru1g"]
 atlas = ExtResource("2_cvqw4")
@@ -2055,7 +2055,6 @@ layer_2/tile_data = PackedInt32Array(983098, 917506, 25, 983100, 917506, 25, 917
 position = Vector2(1429, 622)
 
 [node name="Camera2D" type="Camera2D" parent="pepper"]
-position = Vector2(38, 39)
 zoom = Vector2(1.5, 1.5)
 process_callback = 0
 limit_left = 374

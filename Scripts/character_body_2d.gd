@@ -12,6 +12,7 @@ var extinguisherScene = preload("res://Scenes/fire_extinguisher.tscn")
 
 
 func _physics_process(delta: float) -> void:
+	
 	if not is_instance_valid(heldObj):
 		heldObj = null
 	
