@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw4rvf4p8404u"]
+[gd_scene load_steps=8 format=3 uid="uid://dw4rvf4p8404u"]
 
 [ext_resource type="Script" path="res://Scripts/firetruckDriveScript.gd" id="1_fdjnd"]
 [ext_resource type="Curve" uid="uid://dqw2y7rixnn8a" path="res://powerCurve.tres" id="2_dsah4"]
@@ -11,6 +11,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkynw"]
 size = Vector2(20, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub8r0"]
+size = Vector2(26, 47)
 
 [node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("FL", "FR", "BL", "BR") groups=["vehicle"]]
 position = Vector2(756, 520)
@@ -51,3 +54,11 @@ texture = SubResource("PlaceholderTexture2D_4o3eq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tkynw")
+
+[node name="waterCollectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waterCollectArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ub8r0")
+
+[connection signal="area_entered" from="waterCollectArea" to="." method="_on_water_collect_area_entered"]
