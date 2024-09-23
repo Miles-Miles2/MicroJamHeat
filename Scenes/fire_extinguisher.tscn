@@ -14,7 +14,7 @@ point_count = 2
 offsets = PackedFloat32Array(0.666667, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="fireExtinguisher" type="Area2D" groups=["holdable"]]
+[node name="fireExtinguisher" type="Area2D" groups=["extinguisher", "holdable"]]
 script = ExtResource("1_bfw86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
