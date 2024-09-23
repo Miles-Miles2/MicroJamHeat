@@ -75,5 +75,5 @@ autoplay = "default"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
 stream = ExtResource("2_4v6h2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="firecollide" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e0yk8")

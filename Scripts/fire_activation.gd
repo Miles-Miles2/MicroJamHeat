@@ -3,6 +3,7 @@ extends Node
 @onready var fire_array = get_tree().get_nodes_in_group("fire")
 @onready var timer: Timer = $Timer
 
+var temp = 0
 
 func _ready() -> void:
 	timer.start()
@@ -13,14 +14,16 @@ func generate():
 	return fire_index
 	
 func enable(fuego):
-	if fuego.is_in_group("fire"): 
-		fuego.set_visible(true)
-		fuego.set_process(true)
+	fuego.size = 25
+	fuego.get_node("firecollide").disabled = false
+	fuego.set_visible(true)
+	fuego.PROCESS_MODE_ALWAYS
 	_ready()
 
 func _on_timer_timeout() -> void:
 	var num = generate()
 	enable(fire_array[num])
-	
+	temp += 1
+	_ready()
 	
 	
