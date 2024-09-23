@@ -46,5 +46,6 @@ collision_mask = 3
 shape = SubResource("CircleShape2D_2afor")
 
 [node name="Sprite2D" type="Sprite2D" parent="extinguishArea"]
+visible = false
 texture_filter = 1
 texture = ExtResource("2_ewbax")

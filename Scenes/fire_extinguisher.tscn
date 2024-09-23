@@ -32,7 +32,6 @@ texture = ExtResource("1_uen6i")
 position = Vector2(1, -5)
 emitting = false
 amount = 512
-lifetime = 0.9
 emission_shape = 1
 emission_sphere_radius = 2.0
 spread = 5.0

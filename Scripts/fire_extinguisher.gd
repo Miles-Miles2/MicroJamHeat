@@ -18,7 +18,8 @@ func _process(delta: float) -> void:
 
 	if amountLeft <= 0:
 		queue_free()
-		
+	$CPUParticles2D.lifetime = 1
+	
 	if timer > 0.1:
 		timer -= 0.1
 		if activated and amountLeft > 0:
@@ -28,6 +29,7 @@ func _process(delta: float) -> void:
 					query.exclude = [get_tree().root.get_child(0).get_node("pepper")]
 					var result = space_state.intersect_ray(query)
 					if result:
+						$CPUParticles2D.lifetime = (result.position - global_position).length()/250
 						if (result.position - obj.global_position).length() < 50:
 							obj.extinguish(10)
 
